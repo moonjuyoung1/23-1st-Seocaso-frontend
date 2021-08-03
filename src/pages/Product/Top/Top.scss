@@ -1,0 +1,181 @@
+@import '../../../styles/common.scss';
+
+.top-top {
+  // height: 629px;
+  border-bottom: 1px solid lightgrey;
+  color: $color-black;
+  .top-backimg {
+    position: relative;
+    // height: 394px;
+    .backimg-container {
+      display: flex;
+      flex-direction: row;
+      .backimg-left {
+        flex: 1 1 0%;
+        background-color: rgb(24, 23, 20);
+        // width: 440.5px;
+      }
+      .backimg {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        background: no-repeat center/100%
+          url('../../../assets/images/backimg2.jpg');
+        width: 1024px;
+        height: 394px;
+        .backimg-shadow-left {
+          width: 150px;
+          background-image: linear-gradient(
+            -90deg,
+            rgba(24, 23, 20, 0) 0%,
+            rgb(24, 23, 20) 100%
+          );
+        }
+        .backimg-shadow-right {
+          width: 150px;
+          background-image: linear-gradient(
+            90deg,
+            rgba(34, 40, 39, 0) 0%,
+            #222827 100%
+          );
+        }
+        .backimg-wrap {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(
+            -180deg,
+            rgba(0, 0, 0, 0.35) 2%,
+            rgba(0, 0, 0, 0.2) 70%,
+            rgba(0, 0, 0, 0.5) 100%
+          );
+        }
+      }
+      .backimg-right {
+        flex: 1 1 0%;
+        background-color: rgb(24, 23, 20);
+        // width: 440.5px;
+      }
+    }
+    .backinfo-container {
+      @include flex(row);
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: 34px;
+      margin: 0 auto;
+      .poster-info-container {
+        position: relative;
+        @include flex(row, flex-start);
+        width: 960px;
+        height: 100%;
+        .poster-container {
+          position: relative;
+          top: 100px;
+          margin-right: 15px;
+          width: 162px;
+          height: 234px;
+          border: 2px solid #fafafa;
+          border-radius: 3px;
+          .poster {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .limit-info {
+          @include flex(row, flex-start, center);
+          color: darkgrey;
+          font-size: 13px;
+          .limit-info-list {
+            margin-left: 15px;
+            em {
+              color: $color-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+  .top-info-container {
+    @include flex(row);
+    background-color: $color-white;
+    // width: 100%;
+    // height: auto;
+    padding: 20px 16px 22px;
+    .top-info {
+      padding-left: 193px;
+      width: 960px;
+      @include flex(column, center, flex-start);
+      .cafe-name {
+        font-weight: 700;
+        font-size: 33px;
+      }
+      .cafe-category {
+        margin-top: 8px;
+        font-size: 17px;
+        color: grey;
+      }
+      .cafe-rate {
+        font-size: 17px;
+        margin-top: 16px;
+        padding: 10px 0px 12px 3px;
+        border-top: 1px solid lightgrey;
+        border-bottom: 1px solid lightgrey;
+        width: 100%;
+      }
+      .shop-btn-container {
+        width: 550px;
+        height: 79px;
+        @include flex(row, space-between, flex-end);
+        .shop-btn-merge {
+          display: flex;
+          // width: 254px;
+          height: 40px;
+          .shop-btn {
+            background-color: $color-main;
+            width: 203px;
+            height: 100%;
+            border-radius: 5px 0 0 5px;
+            border-style: none;
+            color: white;
+            .see {
+              margin-left: 10px;
+              font-size: 17px;
+            }
+          }
+          .shop-btn2 {
+            background-color: $color-main;
+            width: 51px;
+            height: 40px;
+            border-radius: 0 5px 5px 0;
+            border-style: none;
+            border-left: 2px solid rgb(129, 88, 35);
+            color: white;
+          }
+        }
+        .rate-container {
+          width: 250px;
+          height: 65px;
+          background-color: white;
+          @include flex(column, flex-end, flex-start);
+          .rate-words {
+            font-size: 12px;
+            color: #787878;
+          }
+          .rate-stars {
+            @include flex(row, space-between);
+            margin-top: 7px;
+            margin-bottom: 5px;
+            .rate-star {
+              width: 40px;
+            }
+            .rate-stars-after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
