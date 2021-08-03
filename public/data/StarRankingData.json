@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "image": "./images/main_thumbnail01.jpg",
+    "cafeName": "스타벅스 선릉동신빌딩R점",
+    "address": "강남구 테헤란로",
+    "star": 4.2
+  },
+  {
+    "id": 2,
+    "image": "./images/main_thumbnail02.jpg",
+    "cafeName": "카페베네 선릉역점",
+    "address": "강남구 테헤란로",
+    "star": 4.5
+  },
+  {
+    "id": 3,
+    "image": "./images/main_thumbnail03.jpg",
+    "cafeName": "로코코커피바",
+    "address": "성동구 매봉길",
+    "star": 4.7
+  },
+  {
+    "id": 4,
+    "cafeName": "아날로그감성",
+    "image": "./images/main_thumbnail04.jpg",
+    "address": "성동구 무수막길",
+    "star": 4.1
+  },
+  {
+    "id": 5,
+    "cafeName": "치코커피",
+    "image": "./images/main_thumbnail05.jpg",
+    "address": "성북구 장월로1라길",
+    "star": 4.3
+  }
+]
