@@ -1,6 +1,8 @@
 import React from 'react';
 import "./LoginModal.scss";
 import SignupModal from '../Signup/SignupModal';
+import { withRouter } from 'react-router-dom';
+
 
 
 
@@ -25,29 +27,30 @@ class LoginModal extends React.Component {
       }),
     })
       .then((response) => response.json())
-      .then((result) => console.log("결과: ", result));
-
-      
+      .then(response => {
+        if (response.token){
+          localStorage.setItem('token', response.token);
+          this.props.history.push('/SignupModal');
+        } else {
+          alert('아이디/ 비밀번호를 다시 입력해주세요!');
+        }
+       
+      })   
     
   }
 
-  handleInputEmail = (e) => {
+  handleInput = (e) => {
     this.setState({
-      email : e.target.value
+      [e.target.name] : e.target.value
 
     })
-  }
-
-  handleInputPw = (e) => {
-    this.setState({
-      password : e.target.value
-
-    })
-  }
-  
+  }  
 
   render() {
-    return (
+    console.log(this.props.history);
+    
+
+    return (     
       <>
         <div className='modal-login' onClick={this.props.checkLogin}>
           <div className='login-box'onClick={(e) => e.stopPropagation()}>
@@ -58,14 +61,17 @@ class LoginModal extends React.Component {
                 <div>
                   <form className='input-wrapup'>
                     <input type='text'
-                    className='input-email'
+                    className={ (this.state.email.indexOf('@') !== -1 && this.state.email.length > 7 ) ? 'input-active' : 'input-disabled'}
                     placeholder='이메일'  
-                    onChange={this.handleInputEmail}                  
+                    onChange={this.handleInput}
+
+                    name='email'                
                     />
                     <input type='password'
-                    className='input-pw'
+                    className={ (this.state.email.length > 8) ? 'input-active' : 'input-disabled'}
                     placeholder='비밀번호'
-                    onChange={this.handleInputPw}
+                    onChange={this.handleInput}
+                    name='password'
                     />                    
                     <button className='input-button'
                     onClick={this.handleFetch}
@@ -73,15 +79,15 @@ class LoginModal extends React.Component {
                   </form>
                   <div className='forget-box'>
                     <div className='forget-pw'><button className='forget-pw'>비밀번호를 잊어버리셨나요?</button></div>                  
-                    <div className='account'>계정이 없으신가요? <button>회원가입</button>                    
+                    <div className='account'>계정이 없으신가요? <button onClick={this.props.checkonSign}>회원가입</button>                  
                     </div>                  
                   </div>
                 </div>  
                 <div className='row-linebox'>
-                    <hr />
-                    <span>OR</span>
-                  </div>
-                  <button className='input-facebook'>Facebook 으로 로그인</button>
+                  <hr />
+                  <span>OR</span>
+                </div>
+                <button className='input-facebook'>Facebook 으로 로그인</button>
 
               </div>
             </section>
@@ -93,5 +99,5 @@ class LoginModal extends React.Component {
   }
 }
 
-export default LoginModal;
+export default withRouter(LoginModal);
 

@@ -7,22 +7,31 @@ class Login extends React.Component {
     super();
     this.state = {
       loginOnModal : false,
-      signupOnModal : false,
+      signupOnModal : false,      
     }
   }
   
   hadleLoginModal = () => {
     this.setState({
-      loginOnModal: !this.state.loginOnModal,
-    });
+      loginOnModal: !this.state.loginOnModal,      
+    });   
   };
 
   hadleSignupModal = () => {
     this.setState({
       signupOnModal: !this.state.signupOnModal,
     })
+    
   }
 
+  hadleSignupLoginModal = () => {
+    this.setState({
+      signupOnModal: !this.state.signupOnModal,
+      loginOnModal: !this.state.loginOnModal,
+
+    })
+    
+  }
 
 
   
@@ -34,10 +43,11 @@ class Login extends React.Component {
       <>
         <button onClick = {this.hadleLoginModal}>
           로그인</button>
-        {this.state.loginOnModal && <LoginModal checkLogin={this.hadleLoginModal} checkSignup={this.hadleSignupModal}/  >}
+        {this.state.loginOnModal && <LoginModal checkLogin={this.hadleLoginModal} checkSignup={this.hadleSignupModal} checkonSign={this.hadleSignupLoginModal}/  >}
         <button onClick = {this.hadleSignupModal}>
           회원가입</button>
-        {this.state.signupOnModal && <SignupModal checkSignup={this.hadleSignupModal} checkLogin={this.hadleLoginModal}/>}
+        {this.state.signupOnModal && <SignupModal checkLogin={this.hadleLoginModal} checkSignup={this.hadleSignupModal} checkonSign={this.hadleSignupLoginModal} />}
+        
       </>
     );
   }

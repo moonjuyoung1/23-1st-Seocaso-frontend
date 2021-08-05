@@ -1,6 +1,7 @@
 import React from 'react';
 import "./SignupModal.scss";
 import LoginModal from '../Login/LoginModal';
+import { withRouter } from 'react-router-dom';
 
 class SignupModal extends React.Component {
 
@@ -27,42 +28,22 @@ class SignupModal extends React.Component {
     
   }
 
-  hadleLoginModal = () => {
+  goToMain = () => {    
+    this.props.history.push('/LoginModal');
+    
+    
+ }
+
+
+
+handleInput = (e) => {
     this.setState({
-      loginOnModal: !this.state.loginOnModal,
+    [e.target.name] : e.target.value
     });
-    if (this.state.signupOnModal === false)  {
-      this.state.signupOnModal === true
-    }
-  };
+  }; 
 
-  handleInputName = (e) => {
-    this.setState({
-      nickname : e.target.value
-    });
-  };
 
-  handleInputEmail = (e) => {
-    this.setState({
-      email : e.target.value
-
-    })
-  }
-
-  handleInputPw = (e) => {
-    this.setState({
-      password : e.target.value
-
-    })
-  }
-  
-
-  
   render() {
-    console.log(this.state.nickname)
-    console.log(this.state.email)
-    console.log(this.state.password)
-
     return (      
       <>
         <div className='signup-modal' onClick={this.props.checkSignup}>
@@ -77,28 +58,30 @@ class SignupModal extends React.Component {
                       <input type='text'
                       className='input-name'
                       placeholder='이름'
-                      onChange={this.handleInputName}
+                      onChange={this.handleInput}
+                      name ='nickname'
                       />                                         
-                    </div>
+                    </div> 
                     <div>  
                       <input type='text'
                       className='input-email'
                       placeholder='이메일'
-                      onChange={this.handleInputEmail}
+                      onChange={this.handleInput}
+                      name='email'
                       />                                                            
                     </div>
                     <div>  
                       <input type='password'
                       className='input-pw'
                       placeholder='비밀번호'
-                      onChange={this.handleInputPw}
+                      onChange={this.handleInput}
+                      name='pw'
                       />                      
                     </div>                      
                       <button className='input-button'
                       onClick={this.handleFetch}>회원가입</button>     
                   </form>
-                  <div className='login-botton'>이미 가입하셨나요? <button onClick={this.hadleLoginModal}>로그인</button>
-                  {this.state.loginOnModal && <LoginModal />}
+                  <div className='login-botton'>이미 가입하셨나요? <button onClick={this.props.checkonSign}>로그인</button>                                                    
                   </div>  
                   <div className='row-line'>
                     <hr />
@@ -117,8 +100,8 @@ class SignupModal extends React.Component {
   }
 }
 
-export default SignupModal;
+export default withRouter (SignupModal);
 
 
 
-//<img src="/images/seocaso_logo.png"/>
+
