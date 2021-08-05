@@ -8,7 +8,25 @@ import { ReactComponent as Star } from '../../../assets/images/star.svg';
 import { ReactComponent as StarOn } from '../../../assets/images/starbrown.svg';
 
 class Top extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      infoList: '',
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/Mockdata.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          infoList: data.info,
+        });
+      });
+  }
+
   render() {
+    const { infoList } = this.state;
     return (
       <div className="container">
         <section className="top-top">
@@ -25,14 +43,14 @@ class Top extends React.Component {
             <div className="backinfo-container">
               <div className="poster-info-container">
                 <div className="poster-container">
-                  <img alt="poster" className="poster" src={imgA} />
+                  <img alt="poster" className="poster" src={infoList.poster} />
                 </div>
                 <ul className="limit-info">
                   <li className="limit-info-list">
-                    카페 순위•<em>1위</em>
+                    카페 순위•<em>{infoList.order}</em>
                   </li>
                   <li className="limit-info-list">
-                    평점 순위•<em>1위</em>
+                    평점 순위•<em>{infoList.order}</em>
                   </li>
                 </ul>
               </div>
@@ -40,9 +58,11 @@ class Top extends React.Component {
           </div>
           <div className="top-info-container">
             <div className="top-info">
-              <h1 className="cafe-name">모리츠 플라츠</h1>
-              <div className="cafe-category">마포구 서교동 </div>
-              <div className="cafe-rate">평균 ★ 5 (536명)</div>
+              <h1 className="cafe-name">{infoList.name}</h1>
+              <div className="cafe-category">{infoList.location}</div>
+              <div className="cafe-rate">
+                평균 ★ {infoList.rate} ({infoList.likes})
+              </div>
               <div className="shop-btn-container">
                 <div className="shop-btn-merge">
                   <button className="shop-btn">

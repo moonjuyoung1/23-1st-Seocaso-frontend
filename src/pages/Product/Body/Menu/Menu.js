@@ -1,7 +1,11 @@
 import React from 'react';
+import CoffeeMenu from './CoffeeMenu/CoffeeMenu';
 // import './Body.scss';
-import imgA from '../../../../assets/images/backimg1.jpg';
-// import imgB from '../../../assets/images/backimg2.jpg';
+// import imgA from '../../../../assets/images/backimg1.jpg';
+// import imgB from '../../../../assets/images/backimg2.jpg';
+// import imgC from '../../../../assets/images/backimg3.jpg';
+// import imgD from '../../../../assets/images/backimg4.jpg';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +14,25 @@ import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 // import { ReactComponent as StarOn } from '../../../assets/images/starbrown.svg';
 
 class Menu extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      menuList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/Mockdata.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          menuList: data.menu,
+        });
+      });
+  }
+
   render() {
+    const { menuList } = this.state;
     return (
       <section className="main-mid">
         <div className="mid-container">
@@ -28,62 +50,13 @@ class Menu extends React.Component {
               icon={faChevronCircleRight}
               style={{ color: '#fafafa' }}
             />
-            <div className="gallery-container">
-              <img alt="gallery" className="gallery-image" src={imgA} />
-              <div className="black-wrap"></div>
-              <div className="coffee-info">
-                <p className="coffee-name">아메리카노</p>
-                <p className="coffee-name">6,000원</p>
-              </div>
-            </div>
-            <div className="gallery-container">
-              <img alt="gallery" className="gallery-image" src={imgA} />
-              <div className="black-wrap"></div>
-              <div className="coffee-info">
-                <p className="coffee-name">아메리카노</p>
-                <p className="coffee-name">6,000원</p>
-              </div>
-            </div>
-            <div className="gallery-container">
-              <img alt="gallery" className="gallery-image" src={imgA} />
-              <div className="black-wrap"></div>
-              <div className="coffee-info">
-                <p className="coffee-name">아메리카노</p>
-                <p className="coffee-name">6,000원</p>
-              </div>
-            </div>
-            <div className="gallery-container">
-              <img alt="gallery" className="gallery-image" src={imgA} />
-              <div className="black-wrap"></div>
-              <div className="coffee-info">
-                <p className="coffee-name">아메리카노</p>
-                <p className="coffee-name">6,000원</p>
-              </div>
-            </div>
-            <div className="gallery-container">
-              <img alt="gallery" className="gallery-image" src={imgA} />
-              <div className="black-wrap"></div>
-              <div className="coffee-info">
-                <p className="coffee-name">아메리카노</p>
-                <p className="coffee-name">6,000원</p>
-              </div>
-            </div>
-            <div className="gallery-container">
-              <img alt="gallery" className="gallery-image" src={imgA} />
-              <div className="black-wrap"></div>
-              <div className="coffee-info">
-                <p className="coffee-name">아메리카노</p>
-                <p className="coffee-name">6,000원</p>
-              </div>
-            </div>
-            <div className="gallery-container">
-              <img alt="gallery" className="gallery-image" src={imgA} />
-              <div className="black-wrap"></div>
-              <div className="coffee-info">
-                <p className="coffee-name">아메리카노</p>
-                <p className="coffee-name">6,000원</p>
-              </div>
-            </div>
+            {menuList.map(menu => (
+              <CoffeeMenu
+                url={menu.url}
+                name={menu.coffeeName}
+                price={menu.coffeePrice}
+              />
+            ))}
           </div>
         </div>
       </section>

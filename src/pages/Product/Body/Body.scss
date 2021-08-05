@@ -66,7 +66,7 @@
                 z-index: 1;
                 position: absolute;
                 top: 140px;
-                left: 0;
+                left: 10px;
                 font-size: 30px;
                 opacity: 0;
               }
@@ -74,7 +74,7 @@
                 z-index: 1;
                 position: absolute;
                 top: 140px;
-                right: 0;
+                right: 10px;
                 font-size: 30px;
                 opacity: 0;
               }
@@ -245,8 +245,32 @@
               height: 339px;
               // background: lightyellow;
               @include flex(column, center, none);
+              position: relative;
               .card-lists {
                 @include flex(row, flex-start, center);
+                &:hover .go-left {
+                  opacity: 0;
+                }
+                &:hover .go-right {
+                  opacity: 0;
+                }
+                .go-left {
+                  z-index: 1;
+                  position: absolute;
+                  top: 150px;
+                  left: 10px;
+                  font-size: 30px;
+                  opacity: 1;
+                }
+                .go-right {
+                  z-index: 1;
+                  position: absolute;
+                  top: 150px;
+                  right: 10px;
+                  font-size: 30px;
+                  opacity: 1;
+                }
+
                 .comment-card {
                   margin-right: 10px;
                   padding: 0 12px;
@@ -282,6 +306,7 @@
                       font-size: 10px;
                       background: white;
                       border-radius: 5px;
+                      color: $color-main;
                     }
                   }
                   .card-mid {
@@ -296,6 +321,7 @@
                       word-break: break-all;
                       font-size: 15px;
                       cursor: pointer;
+                      // space
                     }
                   }
                   .card-bot {
@@ -380,6 +406,11 @@
               }
             }
           }
+        }
+      }
+      @media screen and (max-width: 960px) {
+        .main-side {
+          display: none;
         }
       }
       .main-side {

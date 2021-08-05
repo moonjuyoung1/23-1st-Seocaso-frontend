@@ -12,6 +12,23 @@ import imgD from '../../../../assets/images/backimg4.jpg';
 // import { ReactComponent as StarOn } from '../../../assets/images/starbrown.svg';
 
 class Recommend extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      collectionList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/Mockdata.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          menuList: data,
+        });
+      });
+  }
+
   render() {
     return (
       <section className="recommend-section">

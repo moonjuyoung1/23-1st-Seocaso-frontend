@@ -9,14 +9,32 @@ import React from 'react';
 // import { ReactComponent as StarOn } from '../../../assets/images/starbrown.svg';
 
 class Graph extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      info: '',
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/Mockdata.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          graph: data.info,
+        });
+      });
+  }
+
   render() {
+    const { info } = this.state;
     return (
       <section className="main-bot">
         <div className="bot-container">
           <div className="header-container">
             <h2 className="span-info2">별점 그래프</h2>
             <div className="header-right">
-              <div className="average-rate">평균 ★4.2</div>
+              <div className="average-rate">평균 ★{info.rate}</div>
               <div className="average-people">(130명)</div>
             </div>
           </div>
@@ -24,7 +42,7 @@ class Graph extends React.Component {
             <div className="graph-float">
               <div className="graphs">
                 <div className="graph-0 graph">
-                  <span className="numbering">0</span>
+                  <span className="numbering">1</span>
                 </div>
                 <div className="graph-1 graph"></div>
                 <div className="graph-2 graph">
