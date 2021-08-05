@@ -19,39 +19,64 @@
         }
 
         .ranking-carousel {
-          
+          max-width: 1320px;
+          position: relative;
+          overflow: hidden;
+
           ul {
-            @include flex(row, center, flex-start);
-            max-width: 1320px;
-            overflow: hidden;
+            @include flex(row, flex-start, flex-start);
+            width: 200%;
+            transition: transform .5s ease-in-out;
   
             li {
-              width: 30%;
-              margin-left: 17px;
-  
+              width: 20%;
+              margin: 0 3px;
+
               img {
                 width: 100%;
               }
   
               div {
-                margin: 0 0 7px 0;
+                margin: 0 0 7px 7px;
                 font-size: 0.9em
               }
   
               div:first-of-type {
                 font-size: 1em;
                 font-weight: 700;
-                margin: 10px 0;
+                margin: 10px 0 10px 7px;
               }
             }
   
-            li:first-child {
-              margin-left: 0;
-            }
+          }
+
+          .carousel-btn {
+            position: absolute;
+            top: 38%;
+            transform : translate(0, -50%);
+            font-size: 40px;
+            cursor: pointer;
+            color: $color-white;
+            opacity: .7;
+            transition: opacity .2s ease-in-out;
+          }
+
+          :hover {
+            opacity: 1;
+          }
+
+          .left-btn {
+            left: 0;
+          }
+
+          .right-btn {
+            right: 0;
+          }
+
+          .btn-remove {
+            display: none;
           }
         }
-
-        
       }
     }
 
@@ -149,7 +174,6 @@
           overflow: hidden;
 
           li {
-            width: 30%;
             margin-left: 17px;
 
             img {

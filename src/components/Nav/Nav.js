@@ -15,7 +15,7 @@ class Nav extends React.Component {
           <div>
             <div className="search-box">
               <FontAwesomeIcon icon={faSearch} className="search-icon" />
-              <input type="text" placeholder="카페 또는 메뉴를 검색해보세요." />
+              <input type="text" placeholder="카페 또는 주소를 검색해보세요." />
             </div>
 
             <div>

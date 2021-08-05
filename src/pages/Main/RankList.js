@@ -1,7 +1,7 @@
 import React from "react";
 import "./Main.scss";
 
-class StarRankList extends React.Component {
+class RankList extends React.Component {
   render() {
     return (
       <li>
@@ -15,4 +15,4 @@ class StarRankList extends React.Component {
   }
 }
 
-export default StarRankList;
+export default RankList;

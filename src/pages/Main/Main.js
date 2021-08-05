@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "../../components/Nav/Nav";
-import StarRanking from "./StarRanking";
-import ReviewRanking from "./ReviewRanking";
+import Ranking from "./Ranking";
 import Footer from "./Footer";
 import "./Main.scss";
 
@@ -42,8 +41,8 @@ class Main extends React.Component {
       <div className="main">
         <Nav />
         <section>
-          <StarRanking starRanking={starRanking} />
-          <ReviewRanking reviewRanking={reviewRanking} />
+          <Ranking title="별점 순 ⭐" ranking={starRanking} />
+          <Ranking title="리뷰 순 💬" ranking={reviewRanking} />
         </section>
         <Footer />
       </div>
