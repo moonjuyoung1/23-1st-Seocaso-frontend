@@ -1,0 +1,30 @@
+@import '../../../styles/common.scss';
+
+.main-top {
+  border-bottom: 2px solid whitesmoke;
+
+  .about-cafe {
+    @include flex(row, space-between);
+    background-color: white;
+
+    .cafe-jungbo {
+      font-size: 20px;
+    }
+    .more-container {
+      .more {
+        color: $color-main;
+        font-weight: 700;
+      }
+    }
+  }
+  .cafe-location {
+    @include flex(column, center, flex-start);
+    margin: 15px 0 30px 1px;
+    background: white;
+    font-size: 15px;
+
+    .span-info {
+      margin-top: 8px;
+    }
+  }
+}

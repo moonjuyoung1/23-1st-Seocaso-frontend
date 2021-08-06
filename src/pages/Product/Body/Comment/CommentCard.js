@@ -1,25 +1,17 @@
 import React from 'react';
-// import './Body.scss';
-// import imgA from '../../../assets/images/backimg1.jpg';
-// import imgB from '../../../../assets/images/backimg2.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import { faComment } from '@fortawesome/free-solid-svg-icons';
-// import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
-// import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
-// import { ReactComponent as Star } from '../../../assets/images/star.svg';
-// import { ReactComponent as StarOn } from '../../../assets/images/starbrown.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp, faComment } from '@fortawesome/free-solid-svg-icons';
 
 class CommentCard extends React.Component {
   render() {
-    const { url, id, stars, comment, thumb, talk } = this.props;
+    const { url, id, stars, comment, thumb, talk } = this.props.commentList;
     return (
       <li className="comment-card">
         <div className="card-top">
           <div className="top-face">
             <div className="img-container">
-              <img alt="profile" src={url} className="top-face-img"></img>
+              <img alt="profile" src={url} className="top-face-img" />
             </div>
             <div className="top-name">{id}</div>
           </div>

@@ -1,33 +1,46 @@
 import React from 'react';
+
+import Info from './Info';
+import Menu from './Menu';
+import Graph from './Graph';
+import Comment from './Comment';
+import SideInfo from './SideInfo';
+// import Recommend from './Recommend';
+
 import './Body.scss';
 
-import Info from './Info/Info';
-import Menu from './Menu/Menu';
-import Graph from './Graph/Graph';
-import Comment from './Comment/Comment';
-import SideInfo from './SideInfo/SideInfo';
-import Recommend from './Recommend/Recommend';
-// import imgA from '../../../assets/images/backimg1.jpg';
-// import imgB from '../../../assets/images/backimg2.jpg';
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-// import { faComment } from '@fortawesome/free-solid-svg-icons';
-// import { ReactComponent as Star } from '../../../assets/images/star.svg';
-// import { ReactComponent as StarOn } from '../../../assets/images/starbrown.svg';
-
 class Body extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      menuList: [],
+      imageList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('/data/Mockdata.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          menuList: data.menu,
+          imageList: data.comment,
+        });
+      });
+  }
+
   render() {
+    const { imageList, menuList } = this.state;
     return (
       <div className="body-container">
-        <div className="media-query">
+        <div>
           <div className="body-container">
             <div className="main-info">
               <Info />
-              <Menu />
+              <Menu type="menu" title="메뉴" menu={menuList} />
               <Graph />
               <Comment />
-              <Recommend />
+              <Menu type="recommend" title="추천" menu={imageList} />
             </div>
             <SideInfo />
           </div>

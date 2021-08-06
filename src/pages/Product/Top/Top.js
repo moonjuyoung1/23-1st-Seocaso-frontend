@@ -1,22 +1,24 @@
 import React from 'react';
-import './Top.scss';
-import imgA from '../../../assets/images/backimg1.jpg';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { ReactComponent as Star } from '../../../assets/images/star.svg';
 import { ReactComponent as StarOn } from '../../../assets/images/starbrown.svg';
+
+import './Top.scss';
+
+/* 평가하기(stars) 기능 로직 정리되면 컴포넌트화 하기 */
 
 class Top extends React.Component {
   constructor() {
     super();
     this.state = {
-      infoList: '',
+      infoList: {},
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/Mockdata.json')
+    fetch('/data/Mockdata.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -28,7 +30,7 @@ class Top extends React.Component {
   render() {
     const { infoList } = this.state;
     return (
-      <div className="container">
+      <>
         <section className="top-top">
           <div className="top-backimg">
             <div className="backimg-container">
@@ -100,7 +102,7 @@ class Top extends React.Component {
             </div>
           </div>
         </section>
-      </div>
+      </>
     );
   }
 }

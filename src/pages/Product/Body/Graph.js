@@ -1,12 +1,6 @@
 import React from 'react';
-// import './Body.scss';
-// import imgA from '../../../assets/images/backimg1.jpg';
-// import imgB from '../../../assets/images/backimg2.jpg';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-// import { faComment } from '@fortawesome/free-solid-svg-icons';
-// import { ReactComponent as Star } from '../../../assets/images/star.svg';
-// import { ReactComponent as StarOn } from '../../../assets/images/starbrown.svg';
+
+import './Graph.scss';
 
 class Graph extends React.Component {
   constructor() {
@@ -17,11 +11,11 @@ class Graph extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/Mockdata.json')
+    fetch('/data/Mockdata.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          graph: data.info,
+          info: data.info,
         });
       });
   }
