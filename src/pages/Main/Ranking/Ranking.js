@@ -1,11 +1,11 @@
 import React from "react";
-import RankList from "./RankList";
+import RankList from "../RankList/RankList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronCircleLeft,
   faChevronCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
-import "./Main.scss";
+import "./Ranking.scss";
 
 class Ranking extends React.Component {
   constructor() {
@@ -41,11 +41,11 @@ class Ranking extends React.Component {
             {this.props.ranking.map((rank) => {
               return (
                 <RankList
-                  key={rank.id}
-                  image={rank.image}
-                  name={rank.cafeName}
-                  address={rank.address}
-                  star={rank.star}
+                  key={rank.cafe_id}
+                  image={rank.cafe_image}
+                  cafeName={rank.cafe_name}
+                  address={rank.cafe_address}
+                  star={rank.cafe_avg_rating}
                 />
               );
             })}

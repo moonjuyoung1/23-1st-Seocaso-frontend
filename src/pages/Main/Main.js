@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "../../components/Nav/Nav";
-import Ranking from "./Ranking";
-import Footer from "./Footer";
+//import Nav from "../../components/Nav/Nav";
+//import Footer from "../../components/Footer/Footer";
+import Ranking from "./Ranking/Ranking";
 import "./Main.scss";
 
 class Main extends React.Component {
@@ -14,37 +14,34 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/data/StarRankingData.json", {
-      method: "GET",
-    })
+    fetch("http://10.58.4.92:8000/main")
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          starRanking: data,
+          starRanking: data.STAR_RANKING,
         });
       });
 
-    fetch("/data/ReviewRankingData.json", {
-      method: "GET",
-    })
+    fetch("http://10.58.4.92:8000/main")
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          reviewRanking: data,
+          reviewRanking: data.REVIEW_RANKING,
         });
       });
+    console.log(this.state.starRanking);
   }
 
   render() {
     const { starRanking, reviewRanking } = this.state;
     return (
       <div className="main">
-        <Nav />
+        {/* <Nav /> */}
         <section>
           <Ranking title="별점 순 ⭐" ranking={starRanking} />
           <Ranking title="리뷰 순 💬" ranking={reviewRanking} />
         </section>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
