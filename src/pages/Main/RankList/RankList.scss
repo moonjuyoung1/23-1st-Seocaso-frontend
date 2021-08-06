@@ -1,0 +1,19 @@
+.carousel-list {
+  width: 20%;
+  margin: 0 3px;
+
+  img {
+    width: 100%;
+  }
+
+  div {
+    margin: 0 0 7px 7px;
+    font-size: 0.9em
+  }
+
+  div:first-of-type {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 10px 0 10px 7px;
+  }
+}

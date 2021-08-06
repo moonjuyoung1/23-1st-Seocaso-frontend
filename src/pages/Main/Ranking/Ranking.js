@@ -1,11 +1,11 @@
 import React from "react";
-import RankList from "./RankList";
+import RankList from "../RankList/RankList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronCircleLeft,
   faChevronCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
-import "./Main.scss";
+import "./Ranking.scss";
 
 class Ranking extends React.Component {
   constructor() {
@@ -17,18 +17,9 @@ class Ranking extends React.Component {
 
   handleButtonClick = () => {
     const { currentIndex } = this.state;
-    const imgWidth = 20;
-    const imgViewLength = 5;
-    const imgTranslate = imgWidth * imgViewLength;
-    if (currentIndex === 0) {
-      this.setState({
-        currentIndex: currentIndex - imgTranslate / 2,
-      });
-    } else {
-      this.setState({
-        currentIndex: currentIndex + imgTranslate / 2,
-      });
-    }
+    this.setState({
+      currentIndex: !currentIndex ? currentIndex - 50 : currentIndex + 50,
+    });
   };
 
   render() {
@@ -41,27 +32,29 @@ class Ranking extends React.Component {
             {this.props.ranking.map((rank) => {
               return (
                 <RankList
-                  key={rank.id}
-                  image={rank.image}
-                  name={rank.cafeName}
-                  address={rank.address}
-                  star={rank.star}
-                />
+                  key={rank.cafe_id}
+                  image={rank.cafe_image}
+                  name={rank.cafe_name}
+                  address={rank.cafe_address}
+                >
+                  {this.props.type === "star" && (
+                    <div>평균★{rank.cafe_avg_rating}</div>
+                  )}
+                  {this.props.type === "review" && (
+                    <div>리뷰★{rank.cafe_review_counts}</div>
+                  )}
+                </RankList>
               );
             })}
           </ul>
           <div
-            className={
-              "carousel-btn left-btn " + (!currentIndex ? "btn-remove" : "")
-            }
+            className={`carousel-btn left-btn ${!currentIndex && "btn-remove"}`}
             onClick={this.handleButtonClick}
           >
             <FontAwesomeIcon icon={faChevronCircleLeft} />
           </div>
           <div
-            className={
-              "carousel-btn right-btn " + (currentIndex ? "btn-remove" : "")
-            }
+            className={`carousel-btn right-btn ${currentIndex && "btn-remove"}`}
             onClick={this.handleButtonClick}
           >
             <FontAwesomeIcon icon={faChevronCircleRight} />
