@@ -3,24 +3,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  }
+}
 
+.signup-modal {
+  @include flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.46);
+  z-index: 999;
+}
 
-  .signup-modal{
-    position: fixed;
-    @include flex;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10,10,10,0.46);
-    z-index: 999;
-    
-    
-  }
-
-
-.signup-box{
+.signup-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,10 +26,9 @@
   padding-top: 32px;
   padding-bottom: 48px;
   border-radius: 7px;
-
 }
 
-.header-image{
+.header-image {
   height: 38px;
   width: 230px;
 }
@@ -47,25 +42,25 @@
 }
 
 .input-email,
- .input-pw,  
-  .input-name {
+.input-pw,
+.input-name {
   display: block;
   height: 44px;
   width: 314px;
   padding: 0px 12px;
   margin: 10px 0px;
   border-radius: 6px;
-  background-color: #f5f5f5;
   border: none;
-  color:#8C8C8C;
+  background-color: #f5f5f5;
+  color: #8c8c8c;
   font-size: 16px;
   font-weight: 700;
   &:focus {
     outline: none;
-  }         
+  }
 }
 
-.input-button{
+.input-button {
   display: block;
   height: 44px;
   width: 314px;
@@ -73,50 +68,46 @@
   margin-top: 50px;
   border-radius: 6px;
   cursor: pointer;
-  background-color:#996633;
+  background-color: #996633;
   border: none;
   color: rgb(255, 255, 255);
   font-weight: 700;
   font-size: 17px;
-  
 }
 
-.login-botton{
-  margin-top: 20px; 
-  color:#8C8C8C; 
+.login-botton {
+  margin-top: 20px;
+  color: #8c8c8c;
   font-weight: 700;
   font-size: 15px;
   text-align: center;
-    button{
-      cursor: pointer;
-      border: none;
-      background-color:rgb(255, 255, 255);
-      color: #996633;
-      font-weight: 700;
-      padding: 0px;
-      font-size: 15px;
-      
-
-    }
+  button {
+    cursor: pointer;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: #996633;
+    font-weight: 700;
+    padding: 0px;
+    font-size: 15px;
+  }
 }
 
-.row-line{
+.row-line {
   height: 0px;
   margin: 40px 0px;
   position: relative;
-  background-color:gray;
+  background-color: gray;
 
-  span{
+  span {
     position: absolute;
     bottom: -7px;
     left: 132px;
-    color:#8C8C8C;
-    padding: 0px 14px; 
+    color: #8c8c8c;
+    padding: 0px 14px;
     background-color: rgb(255, 255, 255);
-  } 
-  
+  }
 }
-.input-facebook{
+.input-facebook {
   display: block;
   height: 44px;
   width: 314px;
@@ -127,5 +118,4 @@
   color: rgb(255, 255, 255);
   font-size: 17px;
   font-weight: 700;
-
 }

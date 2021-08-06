@@ -4,7 +4,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <span>주영</span>
+        <span>메인으로이동</span>
       </div>
     );
   }

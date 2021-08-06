@@ -1,1 +1,97 @@
-asdfasdf
+{
+  "menu": [
+    {
+      "id": 1,
+      "url": "./images/backimg1.jpg",
+      "coffeeName": "아메리카노",
+      "coffeePrice": "6,000원"
+    },
+    {
+      "id": 2,
+      "url": "./images/backimg1.jpg",
+      "coffeeName": "모리츠 스페셜",
+      "coffeePrice": "7,000원"
+    },
+    {
+      "id": 3,
+      "url": "./images/backimg1.jpg",
+      "coffeeName": "아보카도",
+      "coffeePrice": "8,000원"
+    },
+    {
+      "id": 4,
+      "url": "./images/backimg1.jpg",
+      "coffeeName": "아이스봉봉",
+      "coffeePrice": "9,000원"
+    },
+    {
+      "id": 5,
+      "url": "./images/backimg1.jpg",
+      "coffeeName": "코히",
+      "coffeePrice": "5,000원"
+    },
+    {
+      "id": 6,
+      "url": "./images/backimg1.jpg",
+      "coffeeName": "마스체라노",
+      "coffeePrice": "5,000원"
+    },
+    {
+      "id": 7,
+      "url": "./images/backimg1.jpg",
+      "coffeeName": "부에나비스타",
+      "coffeePrice": "7,000원"
+    }
+  ],
+  "comment": [
+    {
+      "id": "Berlinchai",
+      "url": "./images/backimg1.jpg",
+      "stars": "★★★★★",
+      "comment": "레스트풀 에이피아이 듣고있습니다. 식곤증 때문인지 잠이 쏟아집니다. 의미없는 내용이지만 작성해봅니다",
+      "thumb": "49",
+      "talk": "5"
+    },
+    {
+      "id": "23기 소진수",
+      "url": "./images/backimg1.jpg",
+      "stars": "★★★",
+      "comment": "구교환, 당신 때문에 기다리는거야....",
+      "thumb": "434",
+      "talk": "2"
+    },
+    {
+      "id": "Berlinchai",
+      "url": "./images/backimg1.jpg",
+      "stars": "★★★★★",
+      "comment": "레스트풀 에이피아이 듣고있습니다. 식곤증 때문인지 잠이 쏟아집니다. 의미없는 내용이지만 작성해봅니다",
+      "thumb": "49",
+      "talk": "5"
+    }
+  ],
+  "info": {
+    "id": "1",
+    "name": "모리츠 플라츠",
+    "hour": "점심 12시부터 저녁 10시까지",
+    "location": "서울 마포구 서교동 와우산로 174",
+    "information": "모리츠 플라츠는 홍대 근처 조용한 골목에 위치한 따뜻한 분위기의 카페입니다.",
+    "rate": "5",
+    "likes": "302명",
+    "poster": "./images/backimg1.jpg",
+    "background": "./images/backimg2.jpg",
+    "order": "1위",
+    "graph": {
+      "zero": "3",
+      "0.5": "10",
+      "1": "26",
+      "1.5": "52",
+      "2": "39",
+      "2.5": "85",
+      "3": "23",
+      "3.5": "53",
+      "4.0": "11",
+      "4.5": "10",
+      "5.0": "14"
+    }
+  }
+}
