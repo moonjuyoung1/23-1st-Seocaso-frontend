@@ -1,0 +1,72 @@
+@import '../../styles/common.scss';
+
+.search-result-box {
+  max-width: 1320px;
+  margin: 50px auto;
+  font-family: 'Noto Sans KR', sans-serif;
+
+  .result-cafename {
+    padding: 70px 0;
+
+    .result-title {
+      padding: 20px 5px;
+      font-size: 1.4em;
+      font-weight: 500;
+    }
+
+    .search-result-list {
+      @include flex(row, flex-start, flex-start);
+      flex-wrap: wrap;
+
+      .no-result {
+        margin: 30px auto;
+      }
+
+      li {
+        width: 182px !important;
+        margin: 0 3px;
+        padding-bottom: 30px;
+
+        img {
+          width: 100%;
+          border-radius: 5px;
+        }
+
+        div:first-of-type {
+          padding: 8px 0 5px 0;
+          font-size: 0.98em;
+          font-weight: 500;
+        }
+
+        div:last-of-type {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  .slideTest {
+    .hiddenbox {
+      max-width:1320px;
+      margin:0 auto;
+      border:1px solid #ddd;
+      overflow:hidden;
+
+      ul {
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease-in-out;
+        
+        li {
+          flex: 0 0 100%;
+          flex-basis: 20%;
+          padding:0 3px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

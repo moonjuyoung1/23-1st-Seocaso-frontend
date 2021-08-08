@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Main from "./pages/Main/Main";
+import Nav from "./components/Nav/Nav";
+import SearchTest from "./components/Nav/SearchTest";
 import Product from "./pages/Product/Product";
 
 class Routes extends React.Component {
@@ -8,7 +9,8 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/Main" component={Main} />
+          <Route exact path="/Nav" component={Nav} />
+          <Route exact path="/SearchTest" component={SearchTest} />
           <Route exact path="/Product" component={Product} />
         </Switch>
       </Router>

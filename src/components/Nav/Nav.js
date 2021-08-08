@@ -1,16 +1,16 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./Nav.scss";
 
 class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      recent: [],
       searchInput: "",
-      starRanking: [],
+      popular: [],
+      showModal: false,
     };
   }
 
@@ -21,44 +21,40 @@ class Nav extends React.Component {
   };
 
   enterInsertValue = (e) => {
-    const { searchInput, recent } = this.state;
     if (e.key === "Enter") {
-      this.setState(
-        {
-          recent: recent.concat(searchInput),
-          searchInput: "",
-        },
-        () => {
-          sessionStorage.setItem("recent", JSON.stringify(this.state.recent));
-        }
-      );
+      this.props.history.push({
+        pathname: "/SearchTest",
+        state: { test: this.state.searchInput },
+      });
     }
   };
 
-  handleClickRemove = () => {
-    sessionStorage.clear();
+  handleModal = () => {
     this.setState({
-      recent: [],
+      showModal: true,
+    });
+  };
+
+  handleModalRemove = () => {
+    this.setState({
+      showModal: false,
     });
   };
 
   componentDidMount() {
-    fetch("/data/StarRankingData.json", {
-      method: "GET",
-    })
+    fetch("/data/SearchResultData.json")
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          starRanking: data,
+          popular: data,
         });
       });
-
-    this.setState({
-      recent: JSON.parse(sessionStorage.getItem("recent")) || [],
-    });
   }
 
   render() {
+    const { searchInput, showModal, popular } = this.state;
+    const { handleModal, handleChange, enterInsertValue, handleModalRemove } =
+      this;
     return (
       <div className="nav">
         <nav>
@@ -68,37 +64,41 @@ class Nav extends React.Component {
               <FontAwesomeIcon icon={faSearch} className="search-icon" />
               <input
                 type="text"
-                value={this.state.searchInput}
+                value={searchInput}
                 placeholder="카페 또는 주소를 검색해보세요."
-                onChange={this.handleChange}
-                onKeyPress={this.enterInsertValue}
+                onClick={handleModal}
+                onChange={handleChange}
+                onKeyPress={enterInsertValue}
               />
-              <div className="searchResultBox">
+              <div
+                className="searchResultBox"
+                style={{ display: showModal && "block" }}
+              >
                 <div>
-                  <p>
-                    최근검색어
-                    <span onClick={this.handleClickRemove}>전체삭제</span>
-                  </p>
-                  <div>
-                    {this.state.recent.map((recent, idx) => {
-                      return <div key={idx}>{recent}</div>;
-                    })}
-                  </div>
-                </div>
-                <div>
+                  <FontAwesomeIcon
+                    icon={faTimes}
+                    onClick={handleModalRemove}
+                    className="modal-close-icon"
+                  />
                   <p>인기검색어</p>
                   <div>
-                    {this.state.starRanking.map((el) => {
+                    {popular.map((el) => {
                       return <div key={el.id}>{el.cafeName}</div>;
                     })}
                   </div>
                 </div>
               </div>
             </div>
-
-            <div>
+            {/* merge후 로그인시 .login / 비로그인시 .not-login 보이도록 하기*/}
+            <div className="not-login">
               <button>로그인</button>
               <button>회원가입</button>
+            </div>
+            <div className="login">
+              <div>다슬님</div>
+              <div>
+                <img alt="프로필사진" src="../../images/profilephoto.png" />
+              </div>
             </div>
           </div>
         </nav>
