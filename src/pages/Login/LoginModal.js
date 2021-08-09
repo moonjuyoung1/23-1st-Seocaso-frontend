@@ -23,6 +23,7 @@ class LoginModal extends React.Component {
     })
       .then(response => response.json())
       .then(response => {
+        console.log('결과: ', response);
         if (response.TOKEN) {
           localStorage.setItem('TOKEN', response.TOKEN);
           this.props.history.push('/main');
@@ -51,45 +52,45 @@ class LoginModal extends React.Component {
             <img src="/images/seocaso_logo.png" className="header-image" />
           </header>
           <h2 className="title">로그인</h2>
-          <section>
-            <div>
-              <form className="input-wrapup">
-                <input
-                  type="text"
-                  className="input-email"
-                  placeholder="이메일"
-                  onChange={this.handleInput}
-                  name="email"
-                />
-                <input
-                  type="password"
-                  className="input-password"
-                  placeholder="비밀번호"
-                  onChange={this.handleInput}
-                  name="password"
-                />
-                <button className="input-button" onClick={this.handleFetch}>
-                  로그인
+
+          <div>
+            <form className="input-wrapup">
+              <input
+                type="text"
+                className="input-email"
+                placeholder="이메일"
+                onChange={this.handleInput}
+                name="email"
+              />
+              <input
+                type="password"
+                className="input-password"
+                placeholder="비밀번호"
+                onChange={this.handleInput}
+                name="password"
+              />
+              <button className="input-button" onClick={this.handleFetch}>
+                로그인
+              </button>
+            </form>
+            <div className="forget-box">
+              <div className="forget-pw">
+                <button className="forget-pw">
+                  비밀번호를 잊어버리셨나요?
                 </button>
-              </form>
-              <div className="forget-box">
-                <div className="forget-pw">
-                  <button className="forget-pw">
-                    비밀번호를 잊어버리셨나요?
-                  </button>
-                </div>
-                <div className="account">
-                  계정이 없으신가요?{' '}
-                  <button onClick={this.props.checkonSign}>회원가입</button>
-                </div>
               </div>
-              <div className="row-linebox">
-                <hr />
-                <span>OR</span>
+              <div className="account">
+                계정이 없으신가요?{' '}
+                <button onClick={this.props.checkonSign}>회원가입</button>
               </div>
-              <button className="input-facebook">Facebook 으로 로그인</button>
             </div>
-          </section>
+            <div className="row-linebox">
+              <hr />
+              <span>OR</span>
+            </div>
+            {/* <FontAwesomeIcon icon={faFacebookF} className="facebook" /> */}
+            <button className="input-facebook">Facebook 으로 로그인</button>
+          </div>
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginModal from '../../../pages/Login/LoginModal';
 import SignupModal from '../../../pages/Signup/SignupModal';
+import Modal from '../../../pages/Modal/Modal';
 
 class Login extends React.Component {
   constructor() {
@@ -8,6 +9,7 @@ class Login extends React.Component {
     this.state = {
       loginOnModal: false,
       signupOnModal: false,
+      Modal: true,
     };
   }
 
