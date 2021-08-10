@@ -3,28 +3,29 @@ import { API } from '../../../src/config';
 import './Footer.scss';
 
 class Footer extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      count : ''
-    }
+      count: '',
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     fetch(`${API.RAITING_COUNT}`)
-    .then(response => response.json())
-    .then(data => {
-      this.setState({
-        count : data
-      })
-    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          count: data,
+        });
+      });
   }
-  
+
   render() {
     return (
       <footer>
         <div className="footer-count">
-          지금까지 <span>★ {this.state.count.RATINGS_COUNT} 개의 평가가</span> 쌓였어요.
+          지금까지 <span>★ {this.state.count.RATINGS_COUNT} 개의 평가가</span>{' '}
+          쌓였어요.
         </div>
         <div className="footer-wrap">
           <ul>

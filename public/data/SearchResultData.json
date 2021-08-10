@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "image": "./images/main_thumbnail01.jpg",
+    "cafeName": "스타벅스 강남점",
+    "address": "서울 강남구 어저구 39"
+  },
+  {
+    "id": 2,
+    "image": "./images/main_thumbnail02.jpg",
+    "cafeName": "탐앤탐스 강남점",
+    "address": "서울 강남구 ㅇㅇㅇ 587"
+  },
+  {
+    "id": 3,
+    "image": "./images/main_thumbnail03.jpg",
+    "cafeName": "커피빈 강남점",
+    "address": "서울 강남구 우와 21"
+  },
+  {
+    "id": 4,
+    "image": "./images/main_thumbnail04.jpg",
+    "cafeName": "스타벅스 동대문점",
+    "address": "서울 동대문구 하기싫어 56"
+  },
+  {
+    "id": 5,
+    "image": "./images/main_thumbnail05.jpg",
+    "cafeName": "탐앤탐스 동대문점",
+    "address": "서울 동대문구 봉은사로 89"
+  },
+  {
+    "id": 6,
+    "image": "./images/main_thumbnail06.jpg",
+    "cafeName": "커피빈 동대문점",
+    "address": "서울 동대문구 일곱시 55"
+  },
+  {
+    "id": 7,
+    "image": "./images/main_thumbnail07.jpg",
+    "cafeName": "스타벅스 강서점",
+    "address": "서울 강서구 이십구분 636"
+  },
+  {
+    "id": 8,
+    "image": "./images/main_thumbnail08.jpg",
+    "cafeName": "커피빈 강서점",
+    "address": "서울 강서구 봉은사로 407"
+  },
+  {
+    "id": 9,
+    "image": "./images/main_thumbnail09.jpg",
+    "cafeName": "탐앤탐스 강서점",
+    "address": "서울 강서구 봉은사로 2045"
+  },
+  {
+    "id": 10,
+    "image": "./images/main_thumbnail10.jpg",
+    "cafeName": "스타벅스 중곡점",
+    "address": "서울 성북구 444"
+  },
+  {
+    "id": 11,
+    "image": "./images/main_thumbnail11.jpg",
+    "cafeName": "커피빈 중곡점",
+    "address": "서울 성북구 봉은사로 344"
+  },
+  {
+    "id": 12,
+    "image": "./images/main_thumbnail12.jpg",
+    "cafeName": "탐앤탐스 중곡점",
+    "address": "서울 성북구 봉은사로 407"
+  },
+  {
+    "id": 13,
+    "image": "./images/main_thumbnail13.jpg",
+    "cafeName": "스타벅스 종로점",
+    "address": "서울 종로구 하기싫다고 407"
+  }
+]
