@@ -1,0 +1,42 @@
+@import '../../styles/common.scss';
+
+.search-result-box {
+  max-width: 1320px;
+  margin: 50px auto;
+  font-family: 'Noto Sans KR', sans-serif;
+
+  .result-cafename {
+    padding: 70px 0;
+
+    .result-title {
+      padding: 20px 5px;
+      font-size: 1.4em;
+      font-weight: 500;
+    }
+
+    .search-result-list {
+      @include flex(row, flex-start, flex-start);
+      flex-wrap: wrap;
+      li {
+        width: 182px !important;
+        margin: 0 3px;
+        padding-bottom: 30px;
+
+        img {
+          width: 100%;
+          border-radius: 5px;
+        }
+
+        div:first-of-type {
+          padding: 8px 0 5px 0;
+          font-size: 0.98em;
+          font-weight: 500;
+        }
+
+        div:last-of-type {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}
