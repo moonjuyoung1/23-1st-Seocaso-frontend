@@ -1,3 +1,6 @@
 {
-  "extends": ["react-app", "plugin:prettier/recommended"]
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "parser": "babel-eslint"
+  }
 }
