@@ -6,10 +6,10 @@ class Modal extends React.Component {
     const { type } = this.props;
     return (
       <div className="modal-login" onClick={this.props.checkLogin}>
-        {type === 'signup' && (
+        {type === 'signUp' && (
           <Form type="signUp" title="회원가입" inputData={SIGNUP_DATA} />
         )}
-        {type === 'signin' && (
+        {type === 'signIn' && (
           <Form type="signIn" title="로그인" inputData={SIGNIN_DATA} />
         )}
 

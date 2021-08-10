@@ -37,19 +37,21 @@ class Login extends React.Component {
       <>
         <button onClick={this.hadleLoginModal}>로그인</button>
         {this.state.loginOnModal && (
-          <LoginModal
-            checkLogin={this.hadleLoginModal}
-            checkSignup={this.hadleSignupModal}
-            checkonSign={this.hadleSignupLoginModal}
-          />
+          <Modal type="signIn" checkLogin={this.hadleLoginModal} />
+          // <LoginModal
+          //   checkLogin={this.hadleLoginModal}
+          //   checkSignup={this.hadleSignupModal}
+          //   checkonSign={this.hadleSignupLoginModal}
+          // />
         )}
         <button onClick={this.hadleSignupModal}>회원가입</button>
         {this.state.signupOnModal && (
-          <SignupModal
-            checkLogin={this.hadleLoginModal}
-            checkSignup={this.hadleSignupModal}
-            checkonSign={this.hadleSignupLoginModal}
-          />
+          // <SignupModal
+          //   checkLogin={this.hadleLoginModal}
+          //   checkSignup={this.hadleSignupModal}
+          //   checkonSign={this.hadleSignupLoginModal}
+          // />
+          <Modal type="signUp" checkSignup={this.hadleSignupModal} />
         )}
       </>
     );

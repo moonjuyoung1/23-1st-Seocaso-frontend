@@ -9,7 +9,7 @@ import Product from './pages/Product/Product';
 import SignupModal from './pages/Signup/SignupModal';
 import LoginModal from './pages/Login/LoginModal';
 import Nav from './components/Nav/Login/Login';
-
+import Mypage from './pages/Mypage/Mypage';
 import Modal from './pages/Modal/Modal';
 
 // import 한 컴포넌트에 대한 경로를 각각 설정해줍니다.
@@ -25,6 +25,7 @@ class Routes extends React.Component {
           <Route exact path="/SignupModal" component={SignupModal} />
           <Route exact path="/LoginModal" component={LoginModal} />
           <Route exact path="/Modal" component={Modal} />
+          <Route exact path="/Mypage" component={Mypage} />
         </Switch>
       </Router>
     );
