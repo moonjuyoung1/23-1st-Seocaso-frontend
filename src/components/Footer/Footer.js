@@ -1,4 +1,5 @@
 import React from 'react';
+import { API } from '../../../src/config';
 import './Footer.scss';
 
 class Footer extends React.Component {
@@ -10,7 +11,7 @@ class Footer extends React.Component {
   }
 
   componentDidMount(){
-    fetch('http://10.58.2.113:8000/cafes/rating-count')
+    fetch(`${API.RAITING_COUNT}`)
     .then(response => response.json())
     .then(data => {
       this.setState({
