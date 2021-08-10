@@ -1,0 +1,48 @@
+@import '../../styles/common.scss';
+
+.review-modal-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  .review-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    width: 640px;
+    height: 550px;
+    margin-top: -275px;
+    margin-left: -320px;
+    background-color: $color-white;
+    border-radius: 5px;
+
+    .review-btns {
+      @include flex(row, space-between, center);
+      padding: 10px 15px;
+      border-bottom: 1px solid #d2d2d2;
+
+      div {
+        cursor: pointer;
+      }
+    }
+
+    .content-write {
+      height: 100%;
+      padding: 20px;
+
+      textarea {
+        width: 100%;
+        height: 90%;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 1.2em;
+        border: none;
+        outline: none;
+        resize: none;
+      }
+    }
+  }
+}
