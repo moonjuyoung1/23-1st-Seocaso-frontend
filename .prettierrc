@@ -1,6 +1,8 @@
 {
-  "tabWidth": 2,
-  "endOfLine": "auto",
-  "arrowParens": "avoid",
-  "singleQuote": true
+  "extends": ["react-app", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+  }
 }
+
