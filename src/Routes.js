@@ -1,11 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// Search 컴포넌트
-import Search from './pages/Search/Search';
-
-// Product 컴포넌트
-import Product from './pages/Product/Product';
+// Main 컴포넌트
+import Review from './pages/Product/Review';
 
 // import 한 컴포넌트에 대한 경로를 각각 설정해줍니다.
 
@@ -14,8 +11,7 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/Search" component={Search} />
-          <Route exact path="/Product" component={Product} />
+          <Route exact path="/review" component={Review} />
         </Switch>
       </Router>
     );
