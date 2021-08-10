@@ -1,5 +1,6 @@
 {
-	"rules": {
-		"linebreak-style": ["error", "windows"]
-	}
+  "rules": {
+    "linebreak-style": 0,
+    "parser": "babel-eslint"
+  }
 }

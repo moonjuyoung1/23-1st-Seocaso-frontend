@@ -2,11 +2,28 @@ import React from 'react';
 import './Footer.scss';
 
 class Footer extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      count : ''
+    }
+  }
+
+  componentDidMount(){
+    fetch('http://10.58.2.113:8000/cafes/rating-count')
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
+        count : data
+      })
+    })
+  }
+  
   render() {
     return (
       <footer>
         <div className="footer-count">
-          지금까지 <span>★ 620,908,961 개의 평가가</span> 쌓였어요.
+          지금까지 <span>★ {this.state.count.RATINGS_COUNT} 개의 평가가</span> 쌓였어요.
         </div>
         <div className="footer-wrap">
           <ul>
@@ -20,7 +37,7 @@ class Footer extends React.Component {
           </dl>
           <dl>
             <dt>제휴 및 대외 협력</dt>
-            <dd>http://localhost:3000/main</dd>
+            <dd>http://localhost:3000/</dd>
           </dl>
           <ul>
             <li>서울의 카페를 소개합니다</li>
