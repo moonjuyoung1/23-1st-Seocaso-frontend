@@ -1,5 +1,5 @@
-import React from "react";
-import "./RankList.scss";
+import React from 'react';
+import './RankList.scss';
 
 class RankList extends React.Component {
   render() {

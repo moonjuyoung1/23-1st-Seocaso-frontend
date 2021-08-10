@@ -1,6 +1,6 @@
-import React from "react";
-import Ranking from "./Ranking/Ranking";
-import "./Main.scss";
+import React from 'react';
+import Ranking from './Ranking/Ranking';
+import './Main.scss';
 
 class Main extends React.Component {
   constructor() {
@@ -12,19 +12,19 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.4.92:8000/main")
-      .then((response) => response.json())
-      .then((data) => {
+    fetch('http://10.58.2.113:8000/cafes?ordering=high_rating')
+      .then(response => response.json())
+      .then(data => {
         this.setState({
-          starRanking: data.STAR_RANKING,
+          starRanking: data.CAFE_LIST,
         });
       });
 
-    fetch("http://10.58.4.92:8000/main")
-      .then((response) => response.json())
-      .then((data) => {
+    fetch('http://10.58.2.113:8000/cafes?ordering=high_count')
+      .then(response => response.json())
+      .then(data => {
         this.setState({
-          reviewRanking: data.REVIEW_RANKING,
+          reviewRanking: data.CAFE_LIST,
         });
       });
   }
