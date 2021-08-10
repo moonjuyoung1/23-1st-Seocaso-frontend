@@ -1,5 +1,7 @@
 {
-	"rules": {
-		"linebreak-style": ["error", "windows"]
-	}
+  "extends": ["react-app", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "linebreak-style": ["error", "windows"]
+  }
 }
