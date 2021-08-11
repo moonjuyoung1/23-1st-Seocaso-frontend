@@ -5,26 +5,33 @@ import { faThumbsUp, faComment } from '@fortawesome/free-solid-svg-icons';
 
 class CommentCard extends React.Component {
   render() {
-    const { url, id, stars, comment, thumb, talk } = this.props.commentList;
+    const {
+      profile_image,
+      nickname,
+      star_rating,
+      content,
+      review_like,
+      comment_on_review,
+    } = this.props.commentList;
     return (
       <li className="comment-card">
         <div className="card-top">
           <div className="top-face">
             <div className="img-container">
-              <img alt="profile" src={url} className="top-face-img" />
+              <img alt="profile" src={profile_image} className="top-face-img" />
             </div>
-            <div className="top-name">{id}</div>
+            <div className="top-name">{nickname}</div>
           </div>
-          <div className="top-rating">{stars}</div>
+          <div className="top-rating">{star_rating}</div>
         </div>
         <div className="card-mid">
-          <p className="mid-words">{comment}</p>
+          <p className="mid-words">{content}</p>
         </div>
         <div className="card-bot">
           <FontAwesomeIcon icon={faThumbsUp} style={{ color: 'grey' }} />
-          <span className="bot-em">{thumb}</span>
+          <span className="bot-em">{review_like}</span>
           <FontAwesomeIcon icon={faComment} style={{ color: 'grey' }} />
-          <span className="bot-em">{talk}</span>
+          <span className="bot-em">{comment_on_review}</span>
         </div>
         <div className="card-likes">
           <button className="likes">좋아요</button>

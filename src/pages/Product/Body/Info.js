@@ -11,17 +11,18 @@ class Info extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/Mockdata.json')
+    fetch('./data/Mockdata.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          infoList: data.info,
+          infoList: data.informations[0],
         });
       });
   }
 
   render() {
     const { infoList } = this.state;
+    console.log(infoList);
     return (
       <section className="main-top">
         <header className="about-cafe">
@@ -37,8 +38,8 @@ class Info extends React.Component {
           <span className="span-info">
             <strong>{infoList.name}</strong>
           </span>
-          <span className="span-info">{infoList.hour}</span>
-          <span className="span-info">{infoList.location}</span>
+          <span className="span-info">{infoList.business_hour}</span>
+          <span className="span-info">{infoList.address}</span>
         </div>
       </section>
     );

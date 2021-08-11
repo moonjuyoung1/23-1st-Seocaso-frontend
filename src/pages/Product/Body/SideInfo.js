@@ -11,11 +11,11 @@ class SideInfo extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/Mockdata.json')
+    fetch('./data/Mockdata.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          info: data.menu[0].url,
+          info: data.informations[0].gallery_image,
         });
       });
   }
@@ -26,12 +26,14 @@ class SideInfo extends React.Component {
       <div className="main-side">
         <h2 className="side-top">인테리어</h2>
         <div className="side-mid">
-          <img className="interior" alt="interior" src={info} />
-          <img className="interior" alt="interior" src={info} />
-          <img className="interior" alt="interior" src={info} />
-          <img className="interior" alt="interior" src={info} />
-          <img className="interior" alt="interior" src={info} />
-          <img className="interior" alt="interior" src={info} />
+          {info.map(url => (
+            <img
+              className="interior"
+              alt="interior"
+              src={url.img}
+              key={url.index}
+            />
+          ))}
           <div className="dark-wrap"></div>
         </div>
       </div>

@@ -15,21 +15,34 @@ class Comment extends React.Component {
     super();
     this.state = {
       commentList: [],
+      count: 0,
     };
   }
 
   componentDidMount() {
-    fetch('/data/Mockdata.json')
+    fetch('./data/Mockdata.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          commentList: data.comment,
+          commentList: data.reviews,
         });
       });
   }
 
+  ClickRight = () => {
+    this.setState(zero => ({ count: zero.count + 1 }));
+  };
+
+  ClickLeft = () => {
+    this.setState(zero => ({ count: zero.count - 1 }));
+  };
+
   render() {
-    const { commentList } = this.state;
+    console.log(this.state.commentList);
+    const { commentList, count } = this.state;
+    let marginLeft = count * -300;
+    let marginRight = count * -300;
+    let rightEnd = commentList.length * -300 + 900;
     return (
       <section className="comment-section">
         <div className="comment-container">
@@ -46,18 +59,30 @@ class Comment extends React.Component {
             </div>
           </header>
           <div className="card-container">
-            <ul className="card-lists">
+            <ul
+              className="card-lists"
+              style={{
+                marginLeft: `${marginLeft}px`,
+                marginRight: `${marginRight}px`,
+              }}
+            >
               <FontAwesomeIcon
                 className="go-css go-left"
-                onClick=""
+                onClick={this.ClickLeft}
                 icon={faChevronCircleLeft}
-                style={{ color: '#fafafa' }}
+                style={{
+                  color: '#fafafa',
+                  display: marginLeft === 0 ? 'none' : 'block',
+                }}
               />
               <FontAwesomeIcon
                 className="go-css go-right"
-                onClick=""
+                onClick={this.ClickRight}
                 icon={faChevronCircleRight}
-                style={{ color: '#fafafa' }}
+                style={{
+                  color: '#fafafa',
+                  display: marginRight < rightEnd ? 'none' : 'block',
+                }}
               />
               {commentList.map(commentList => (
                 <CommentCard commentList={commentList} />

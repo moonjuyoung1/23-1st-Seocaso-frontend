@@ -2,17 +2,14 @@
 
 // `config.js` 에서 관리를 하면서 import / export 를 사용하면 아래와 같이 구성이 될 것입니다.
 
-// ```jsx
-// // src/config.js
-// const BASE_URL = 'http://10.58.5.151:8000'
-// export const GET_PRODUCT_API = `${BASE_URL}/products`
+// src/config.js
+const BASE_URL = 'http://10.58.0.158:8000/cafe/1';
+// const MOCK_URL = './data/Mockdata.json'
+export const GET_PRODUCT_API = `${BASE_URL}`;
 
-// // 사용하는 컴포넌트
+// 사용하는 컴포넌트
 // import { GET_PRODUCT_API } from '../../../config.js';
 
-// ...
-
 // fetch(`${GET_PRODUCT_API}/5`).then(...).then(...);
-// ```
 
 // 위의 경우, 백엔드 IP 가 바뀔 때 `config.js` 에서 IP 만 바꾸어주면 모든 API 가 새로운 IP 에 따라서 변경됩니다. 그렇기 때문에 일일이 fetch 함수를 찾아 API 를 수정해줄 필요가 없습니다.

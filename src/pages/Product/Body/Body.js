@@ -19,12 +19,12 @@ class Body extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/Mockdata.json')
+    fetch('./data/Mockdata.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          menuList: data.menu,
-          imageList: data.comment,
+          menuList: data.menus,
+          imageList: data.recommendation,
         });
       });
   }

@@ -39,30 +39,28 @@
 
       .card-lists {
         @include flex(row, flex-start, center);
+        transition: margin 0.5s ease-in-out;
 
-        &:hover .go-left {
-          opacity: 0;
+        &:hover > .go-left {
+          opacity: 1;
         }
 
-        &:hover .go-right {
-          opacity: 0;
+        &:hover > .go-right {
+          opacity: 1;
         }
 
         .go-css {
           position: absolute;
           top: 150px;
-          left: 10px;
           font-size: 30px;
-          opacity: 1;
+          opacity: 0;
           z-index: 1;
         }
         .go-left {
           left: 10px;
-          // z-index: 1;
         }
         .go-right {
           right: 10px;
-          // z-index: 1;
         }
 
         .comment-card {

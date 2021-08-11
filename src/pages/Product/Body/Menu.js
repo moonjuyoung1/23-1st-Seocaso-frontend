@@ -14,7 +14,6 @@ class Menu extends React.Component {
   constructor() {
     super();
     this.state = {
-      menuList: [],
       count: 0,
     };
   }
@@ -39,12 +38,11 @@ class Menu extends React.Component {
     this.setState(zero => ({ count: zero.count - 1 }));
   };
 
-  PositionLeft = () => {};
-
   render() {
-    let marginLeft = this.state.count * -187;
-    let marginRight = this.state.count * -187;
     const { menu, title, type } = this.props;
+    let marginLeft = this.state.count * -178;
+    let marginRight = this.state.count * -178;
+    let rightEnd = menu.length * -178 + 534;
     return (
       <section className="main-mid">
         <div className="mid-container">
@@ -62,25 +60,28 @@ class Menu extends React.Component {
               icon={faChevronCircleLeft}
               style={{
                 color: '#fafafa',
-                // {${marginLeft} === 0 ? display: none : display: block;}
+                display: marginLeft === 0 ? 'none' : 'block',
               }}
             />
             <FontAwesomeIcon
               className="go-css go-right"
               onClick={this.ClickRight}
               icon={faChevronCircleRight}
-              style={{ color: '#fafafa' }}
+              style={{
+                color: '#fafafa',
+                display: marginRight === rightEnd ? 'none' : 'block',
+              }}
             />
             {menu.map(menu => (
               <CoffeeMenu menu={menu}>
                 {type === 'menu' && (
                   <>
-                    <p className="coffee-name">{menu.coffeeName}</p>
-                    <p className="coffee-name">{menu.coffeePrice}</p>
+                    <p>{menu.menu_name}</p>
+                    <p>{menu.price}</p>
                   </>
                 )}
                 {type === 'recommend' && (
-                  <p className="coffee-name">{menu.name}</p>
+                  <p className="cafe-center ">{menu.cafe_name}</p>
                 )}
               </CoffeeMenu>
             ))}

@@ -1,100 +1,111 @@
 {
-  "menu": [
+  "menus": [
     {
       "id": 1,
-      "url": "./images/backimg1.jpg",
-      "coffeeName": "아메리카노",
-      "coffeePrice": "6,000원"
+      "url": "https://i.imgur.com/ehdfhcb.jpg",
+      "menu_name": "카페라떼",
+      "price": "4500원"
     },
     {
       "id": 2,
-      "url": "./images/backimg1.jpg",
-      "coffeeName": "모리츠 스페셜",
-      "coffeePrice": "7,000원"
+      "url": "https://i.imgur.com/lTe8HBB.jpg",
+      "menu_name": "카푸치노",
+      "price": "4500원"
     },
     {
       "id": 3,
-      "url": "./images/backimg1.jpg",
-      "coffeeName": "아보카도",
-      "coffeePrice": "8,000원"
+      "url": "https://i.imgur.com/ZbyIWBD.jpg",
+      "menu_name": "에스프레소",
+      "price": "4000원"
     },
     {
       "id": 4,
-      "url": "./images/backimg1.jpg",
-      "coffeeName": "아이스봉봉",
-      "coffeePrice": "9,000원"
-    },
-    {
-      "id": 5,
-      "url": "./images/backimg1.jpg",
-      "coffeeName": "코히",
-      "coffeePrice": "5,000원"
-    },
-    {
-      "id": 6,
-      "url": "./images/backimg1.jpg",
-      "coffeeName": "마스체라노",
-      "coffeePrice": "5,000원"
-    },
-    {
-      "id": 7,
-      "url": "./images/backimg1.jpg",
-      "coffeeName": "부에나비스타",
-      "coffeePrice": "7,000원"
+      "url": "https://i.imgur.com/N3I2h2D.jpg",
+      "menu_name": "녹차라떼",
+      "price": "4500원"
     }
   ],
-  "comment": [
+  "reviews": [
     {
-      "id": "Berlinchai",
-      "url": "./images/backimg1.jpg",
-      "stars": "★★★★★",
-      "comment": "레스트풀 에이피아이 듣고있습니다. 식곤증 때문인지 잠이 쏟아집니다. 의미없는 내용이지만 작성해봅니다",
-      "thumb": "49",
-      "talk": "5",
-      "name": "모리츠 플라츠"
+      "nickname": "최혜림",
+      "profile_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+      "star_rating": "4.0",
+      "content": "분위기 짱",
+      "review_like": 0,
+      "comment_on_review": 0
     },
     {
-      "id": "23기 소진수",
-      "url": "./images/backimg1.jpg",
-      "stars": "★★★",
-      "comment": "구교환, 당신 때문에 기다리는거야....",
-      "thumb": "434",
-      "talk": "2",
-      "name": "A.O.S"
+      "nickname": "김다슬",
+      "profile_image": "sdfsdfadsf",
+      "star_rating": "2.0",
+      "content": "분위기 좋아요",
+      "review_like": 0,
+      "comment_on_review": 0
     },
     {
-      "id": "Berlinchai",
-      "url": "./images/backimg1.jpg",
-      "stars": "★★★★★",
-      "comment": "레스트풀 에이피아이 듣고있습니다. 식곤증 때문인지 잠이 쏟아집니다. 의미없는 내용이지만 작성해봅니다",
-      "thumb": "49",
-      "talk": "5",
-      "name": "Always8gust"
+      "nickname": "소진수",
+      "profile_image": "sdfsdfadsf",
+      "star_rating": "1.0",
+      "content": "별로였네요",
+      "review_like": 0,
+      "comment_on_review": 0
     }
   ],
-  "info": {
-    "id": "1",
-    "name": "모리츠 플라츠",
-    "hour": "점심 12시부터 저녁 10시까지",
-    "location": "서울 마포구 서교동 와우산로 174",
-    "information": "모리츠 플라츠는 홍대 근처 조용한 골목에 위치한 따뜻한 분위기의 카페입니다.",
-    "rate": "5",
-    "likes": "302명",
-    "poster": "./images/backimg1.jpg",
-    "background": "./images/backimg2.jpg",
-    "order": "1위",
-    "graph": {
-      "zero": "3",
-      "0.5": "10",
-      "1": "26",
-      "1.5": "52",
-      "2": "39",
-      "2.5": "85",
-      "3": "23",
-      "3.5": "53",
-      "4.0": "11",
-      "4.5": "10",
-      "5.0": "14"
+  "informations": [
+    {
+      "id": 1,
+      "name": "모리츠 플라츠",
+      "business_hour": "매일 12:00 ~ 23:00 연중무휴",
+      "address": "서울 마포구 와우산로 174",
+      "phone_number": "010-7546-7122",
+      "description": "홍대에 위치한 카페&숍 입니다.",
+      "review_ranking": 1,
+      "star_rating_ranking": 4,
+      "likes": 0,
+      "cafe_image": "https://i.imgur.com/pzMvbm8.jpg",
+      "background_image": "https://i.imgur.com/DQOGc0U.jpg",
+      "gallery_image": [
+        { "index": 1, "img": "https://i.imgur.com/IB7XZxC.jpg" },
+        { "index": 2, "img": "https://i.imgur.com/PkrGVsX.jpg" },
+        { "index": 3, "img": "https://i.imgur.com/DQOGc0U.jpg" },
+        { "index": 4, "img": "https://i.imgur.com/pEjMJKS.jpg" },
+        { "index": 5, "img": "https://i.imgur.com/LuGwdD0.jpg" },
+        { "index": 6, "img": "https://i.imgur.com/ycEL26q.jpg" },
+        { "index": 7, "img": "https://i.imgur.com/pzMvbm8.jpg" }
+      ],
+      "evaluation_graphs": [130, 50, 192, 10, 391, 583, 192, 212, 731, 392]
     }
-  }
+  ],
+  "recommendation": [
+    {
+      "cafe_name": "모리츠 플라츠",
+      "average_star_rating": "2.2",
+      "url": "https://i.imgur.com/pzMvbm8.jpg"
+    },
+    {
+      "cafe_name": "alwaysau8ust",
+      "average_star_rating": "0",
+      "url": "https://i.imgur.com/99meB8B.jpg"
+    },
+    {
+      "cafe_name": "braunhaus",
+      "average_star_rating": "0",
+      "url": "https://i.imgur.com/ut17HVO.jpg"
+    },
+    {
+      "cafe_name": "모리츠 플라워",
+      "average_star_rating": "2.0",
+      "url": "https://i.imgur.com/pzMvbm8.jpg"
+    },
+    {
+      "cafe_name": "alwayshungry",
+      "average_star_rating": "0",
+      "url": "https://i.imgur.com/99meB8B.jpg"
+    },
+    {
+      "cafe_name": "브라운해우소",
+      "average_star_rating": "0",
+      "url": "https://i.imgur.com/ut17HVO.jpg"
+    }
+  ]
 }

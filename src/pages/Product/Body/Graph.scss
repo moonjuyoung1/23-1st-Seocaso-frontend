@@ -40,7 +40,7 @@
       .graph-float {
         .graphs {
           @include flex(row, center, flex-end);
-
+          height: 85px;
           .graph {
             @include wh(35px, 88px);
             position: relative;
@@ -56,17 +56,16 @@
             }
           }
           $list: (
-            0: 9px,
-            1: 18px,
-            2: 27px,
-            3: 27px,
-            4: 39px,
-            5: 46px,
-            6: 64px,
-            7: 73px,
-            8: 77px,
-            9: 84px,
-            10: 85px,
+            1: 1px,
+            2: 2px,
+            3: 3px,
+            4: 4px,
+            5: 5px,
+            6: 6px,
+            7: 7px,
+            8: 8px,
+            9: 9px,
+            10: 10px,
           );
           @each $index, $height in $list {
             .graph-#{$index} {

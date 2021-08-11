@@ -26,8 +26,6 @@ Misc Properties (cursor, overflow, z-index)
         position: relative;
         display: flex;
         justify-content: space-between;
-        background: no-repeat center/100%
-          url('../../../assets/images/backimg2.jpg');
 
         .backimg-shadow-left {
           width: 150px;
@@ -132,54 +130,6 @@ Misc Properties (cursor, overflow, z-index)
       .shop-btn-container {
         @include flex(row, space-between, flex-end);
         @include wh(550px, 79px);
-
-        .shop-btn-merge {
-          display: flex;
-          height: 40px;
-
-          .shop-btn {
-            @include wh(203px, 100%);
-            background-color: $color-main;
-            border-radius: 5px 0 0 5px;
-            border-style: none;
-            color: white;
-
-            .see {
-              margin-left: 10px;
-              font-size: 17px;
-            }
-          }
-          .shop-btn2 {
-            @include wh(51px, 40px);
-            background-color: $color-main;
-            border-radius: 0 5px 5px 0;
-            border-style: none;
-            border-left: 2px solid rgb(129, 88, 35);
-            color: white;
-          }
-        }
-        .rate-container {
-          @include wh(250px, 65px);
-          @include flex(column, flex-end, flex-start);
-          background-color: white;
-
-          .rate-words {
-            color: #787878;
-            font-size: 12px;
-          }
-          .rate-stars {
-            @include flex(row, space-between);
-            margin-top: 7px;
-            margin-bottom: 5px;
-
-            .rate-star {
-              width: 40px;
-            }
-            .rate-stars-after {
-              display: none;
-            }
-          }
-        }
       }
     }
   }
