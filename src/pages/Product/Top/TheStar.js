@@ -2,8 +2,6 @@ import React from 'react';
 
 import './TheStar.scss';
 
-import './Top.scss';
-
 class TheStar extends React.Component {
   render() {
     const { index, rating, clickStar, hoverStar } = this.props;
@@ -13,6 +11,7 @@ class TheStar extends React.Component {
         index={index}
         onMouseMove={hoverStar}
         OnClick={clickStar}
+        // onMouseOut={outStar}
       >
         {index - rating === 0.5 && <div className="halfStar" index={index} />}
         {index <= rating && <div className="fullStar" index={index} />}

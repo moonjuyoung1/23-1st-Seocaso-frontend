@@ -4,7 +4,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faComment } from '@fortawesome/free-solid-svg-icons';
 
 class CommentCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      commentLike: this.props.commentList.review_like,
+    };
+  }
+
+  likeClick = () => {
+    let { review_like } = this.props.commentList;
+    if (this.state.commentLike === review_like) {
+      this.setState({
+        commentLike: this.state.commentLike + 1,
+      });
+    } else if (this.state.commentLike > review_like) {
+      this.setState({
+        commentLike: this.state.commentLike - 1,
+      });
+    }
+  };
+
   render() {
+    console.log(this.state.commentLike);
+    console.log(this.props.commentList.review_like);
     const {
       profile_image,
       nickname,
@@ -18,23 +40,43 @@ class CommentCard extends React.Component {
         <div className="card-top">
           <div className="top-face">
             <div className="img-container">
-              <img alt="profile" src={profile_image} className="top-face-img" />
+              <img
+                alt="*"
+                src={profile_image}
+                onError={e => (e.target.style.display = 'none')}
+                className="top-face-img"
+              />
             </div>
             <div className="top-name">{nickname}</div>
           </div>
-          <div className="top-rating">{star_rating}</div>
+          <div className="top-rating">★ {star_rating}</div>
         </div>
         <div className="card-mid">
           <p className="mid-words">{content}</p>
         </div>
         <div className="card-bot">
           <FontAwesomeIcon icon={faThumbsUp} style={{ color: 'grey' }} />
-          <span className="bot-em">{review_like}</span>
+          <span className="bot-em">{this.state.commentLike}</span>
           <FontAwesomeIcon icon={faComment} style={{ color: 'grey' }} />
           <span className="bot-em">{comment_on_review}</span>
         </div>
-        <div className="card-likes">
-          <button className="likes">좋아요</button>
+        <div
+          className={
+            this.state.commentLike === review_like
+              ? 'card-likes'
+              : 'card-likes-disabled'
+          }
+        >
+          <button
+            className={
+              this.state.commentLike === review_like
+                ? 'likes'
+                : 'likes-disabled'
+            }
+            onClick={this.likeClick}
+          >
+            좋아요
+          </button>
         </div>
       </li>
     );

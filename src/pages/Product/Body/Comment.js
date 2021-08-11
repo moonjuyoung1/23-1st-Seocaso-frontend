@@ -48,7 +48,7 @@ class Comment extends React.Component {
         <div className="comment-container">
           <header className="comment-header">
             <div className="comment-left">
-              <h2 className="comment-name">코멘트</h2>
+              <h2 className="comment-name">리뷰</h2>
               <div className="comment-number">1500+</div>
             </div>
             <div className="more-container">

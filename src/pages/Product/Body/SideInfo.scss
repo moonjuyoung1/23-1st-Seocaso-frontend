@@ -15,8 +15,9 @@
   .side-mid {
     @include flex(row, flex-start, flex-start);
     position: relative;
-    height: auto;
+    height: 300px;
     overflow: hidden;
+    cursor: pointer;
 
     .interior {
       @include wh(100%, 100%);
@@ -24,15 +25,25 @@
     }
     .dark-wrap {
       @include wh(100%, 100%);
+      @include flex(row, center, flex-end);
       position: absolute;
       top: 0;
       left: 0;
-      background-image: linear-gradient(
-        -180deg,
-        rgba(0, 0, 0, 0.1) 2%,
+      background: linear-gradient(
         rgba(0, 0, 0, 0.2) 70%,
         rgba(0, 0, 0, 0.5) 100%
       );
+
+      &:hover > .plus {
+        opacity: 1;
+      }
+
+      .plus {
+        opacity: 0;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: $color-bg;
+      }
     }
   }
 }

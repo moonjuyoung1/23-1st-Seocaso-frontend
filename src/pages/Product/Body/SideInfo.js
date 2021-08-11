@@ -34,7 +34,9 @@ class SideInfo extends React.Component {
               key={url.index}
             />
           ))}
-          <div className="dark-wrap"></div>
+          <div className="dark-wrap">
+            <span className="plus">click for more</span>
+          </div>
         </div>
       </div>
     );

@@ -97,7 +97,7 @@
               background: white;
               border-radius: 5px;
               color: $color-main;
-              font-size: 10px;
+              font-size: 13px;
               text-align: center;
             }
           }
@@ -126,8 +126,31 @@
             }
           }
 
+          .card-likes-disabled {
+            @include flex(row);
+            width: 65px;
+            margin: 10px;
+            background-color: $color-main;
+            transition: 0.3s ease-in-out;
+            border-radius: 5px;
+
+            .likes-disabled {
+              font-size: 15px;
+              color: $color-bg;
+              font-weight: 100;
+              border: none;
+              background: none;
+              cursor: pointer;
+              text-align: center;
+              margin: 3px;
+            }
+          }
+
           .card-likes {
-            padding: 15px 0;
+            @include flex(row);
+            width: 60px;
+            margin: 5px;
+            transition: 0.3s ease-in-out;
 
             .likes {
               font-size: 15px;
@@ -136,6 +159,7 @@
               border: none;
               background: none;
               cursor: pointer;
+              text-align: center;
             }
           }
         }

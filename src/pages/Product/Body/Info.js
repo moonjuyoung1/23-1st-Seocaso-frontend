@@ -7,6 +7,7 @@ class Info extends React.Component {
     super();
     this.state = {
       infoList: [],
+      moreInfo: false,
     };
   }
 
@@ -20,18 +21,30 @@ class Info extends React.Component {
       });
   }
 
+  forMore = e => {
+    if (this.state.moreInfo === false) {
+      this.setState({
+        moreInfo: true,
+      });
+    } else if (this.state.moreInfo === true) {
+      this.setState({
+        moreInfo: false,
+      });
+    }
+  };
+
   render() {
-    const { infoList } = this.state;
+    const { infoList, moreInfo } = this.state;
     console.log(infoList);
     return (
       <section className="main-top">
         <header className="about-cafe">
           <h2 className="cafe-jungbo">카페 정보</h2>
-          <div className="more-container">
-            <div className="more">
-              더보기
-              {/* <a alt="more" href={'#'}></a> */}
-            </div>
+          <div
+            className={moreInfo === false ? 'more' : 'more-disabled'}
+            onClick={this.forMore}
+          >
+            더보기
           </div>
         </header>
         <div className="cafe-location">
@@ -40,6 +53,12 @@ class Info extends React.Component {
           </span>
           <span className="span-info">{infoList.business_hour}</span>
           <span className="span-info">{infoList.address}</span>
+          {moreInfo === true && (
+            <>
+              <span className="span-info">{infoList.phone_number}</span>
+              <span className="span-info">{infoList.description}</span>
+            </>
+          )}
         </div>
       </section>
     );
