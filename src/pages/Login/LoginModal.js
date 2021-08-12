@@ -1,7 +1,7 @@
 import React from 'react';
-import './LoginModal.scss';
-import SignupModal from '../Signup/SignupModal';
 import { withRouter } from 'react-router-dom';
+import { API } from '../../config';
+import './LoginModal.scss';
 
 class LoginModal extends React.Component {
   constructor() {
@@ -14,7 +14,7 @@ class LoginModal extends React.Component {
 
   handleFetch = e => {
     e.preventDefault();
-    fetch('http://10.58.0.59:8000/users/signin', {
+    fetch(`${API.SIGNIN}`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -36,13 +36,6 @@ class LoginModal extends React.Component {
 
   goToMain = () => {
     this.props.history.push('/main');
-  };
-
-  handleEnter = e => {
-    if (e.key === 'Enter') {
-      this.handleFetch(e);
-      console.log('성공');
-    }
   };
 
   handleInput = e => {
@@ -74,7 +67,6 @@ class LoginModal extends React.Component {
                 className="input-password"
                 placeholder="비밀번호"
                 onChange={this.handleInput}
-                onKeyDown={this.handleEnter}
                 name="password"
               />
               <button className="input-button" onClick={this.handleFetch}>

@@ -1,0 +1,51 @@
+@import '../../styles/common.scss';
+
+.modal {
+  @include flex(row);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.46);
+  z-index: 999;
+  .container {
+    background-color: rgb(255, 255, 255);
+    width: 375px;
+    @include flex(column);
+    border-radius: 5px;
+
+    header {
+      font-size: 20px;
+      text-align: center;
+      width: 375px;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgb(234, 233, 232);
+      line-height: 48px;
+      font-weight: 700;
+    }
+
+    li {
+      font-size: 20px;
+      width: 335px;
+      margin: 0px;
+      border-bottom: 1px solid rgb(234, 233, 232);
+      line-height: 48px;
+      font-weight: 400;
+      padding: 10px 0px;
+      cursor: pointer;
+
+      &:last-child {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.xmark {
+  color: #996633;
+  position: absolute;
+  bottom: 495px;
+  right: 540px;
+  font-size: 20px;
+}

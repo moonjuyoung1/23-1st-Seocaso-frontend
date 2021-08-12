@@ -26,10 +26,21 @@ class Nav extends React.Component {
   enterInsertValue = e => {
     if (e.key === 'Enter') {
       this.props.history.push({
-        pathname: '/Search',
+        pathname: `/Search/${this.state.searchInput}`,
         state: { keyword: this.state.searchInput },
       });
     }
+    this.setState({
+      searchInput: '',
+    });
+  };
+
+  goToMypage = () => {
+    this.props.history.push('/Mypage');
+  };
+
+  goToMain = () => {
+    this.props.history.push('/Main');
   };
 
   hadleLoginModal = () => {
@@ -57,7 +68,11 @@ class Nav extends React.Component {
     return (
       <nav className="nav">
         <div className="nav-wrapper">
-          <img alt="서카소 로고" src="../images/seocaso_logo.png" />
+          <img
+            alt="서카소 로고"
+            src="../../images/seocaso_logo.png"
+            onClick={this.goToMain}
+          />
           <div className="search">
             <div className="search-box">
               <FontAwesomeIcon icon={faSearch} className="search-icon" />
@@ -69,8 +84,14 @@ class Nav extends React.Component {
                 onKeyPress={enterInsertValue}
               />
             </div>
-            {/* merge후 로그인시 .login / 비로그인시 .not-login 보이도록 하기*/}
             {localStorage.getItem('TOKEN') ? (
+              <div className="login">
+                <div>다슬님</div>
+                <div onClick={this.goToMypage}>
+                  <img alt="프로필사진" src="../../images/profilephoto.png" />
+                </div>
+              </div>
+            ) : (
               <div className="not-login">
                 <button className="nav-button" onClick={this.hadleLoginModal}>
                   로그인
@@ -95,13 +116,6 @@ class Nav extends React.Component {
                     checkonSign={this.hadleSignupLoginModal}
                   />
                 )}
-              </div>
-            ) : (
-              <div className="login">
-                <div>다슬님</div>
-                <div>
-                  <img alt="프로필사진" src="../../images/profilephoto.png" />
-                </div>
               </div>
             )}
           </div>

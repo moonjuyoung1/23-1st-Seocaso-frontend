@@ -1,0 +1,42 @@
+@import '../../../styles/common.scss';
+
+.main-top {
+  border-bottom: 2px solid whitesmoke;
+
+  .about-cafe {
+    @include flex(row, space-between);
+    background-color: white;
+
+    .cafe-jungbo {
+      font-size: 20px;
+    }
+
+    .more-disabled,
+    .more {
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    .more-disabled {
+      color: white;
+      background-color: $color-main;
+    }
+
+    .more {
+      color: $color-main;
+    }
+  }
+  .cafe-location {
+    @include flex(column, center, flex-start);
+    margin: 15px 0 30px 1px;
+    background: white;
+    font-size: 15px;
+
+    .span-info {
+      margin-top: 8px;
+    }
+  }
+}
