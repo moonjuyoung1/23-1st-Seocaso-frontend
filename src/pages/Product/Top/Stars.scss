@@ -1,0 +1,26 @@
+@import '../../../styles/common.scss';
+
+.rate-container {
+  @include wh(250px, 65px);
+  @include flex(column, flex-end, flex-start);
+
+  background-color: white;
+
+  .rate-words {
+    color: #787878;
+    font-size: 12px;
+  }
+  .rate-stars {
+    @include flex(row, space-between);
+    margin-top: 7px;
+    margin-bottom: 5px;
+
+    .rate-stars-after {
+      position: absolute;
+    }
+    .rate-star {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

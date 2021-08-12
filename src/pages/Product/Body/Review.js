@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ReviewModal from './ReviewModal';
+import ReviewModal from './Review/ReviewModal';
 import './Review.scss';
 
 class Review extends React.Component {
@@ -32,6 +32,12 @@ class Review extends React.Component {
     this.handleModal();
   };
 
+  removeContent = () => {
+    this.setState({
+      writeContent: '',
+    });
+  };
+
   render() {
     const { writeContent, isModal } = this.state;
     return (
@@ -52,7 +58,12 @@ class Review extends React.Component {
             )}
           </div>
         ) : (
-          <div className="review-content">{writeContent}</div>
+          <div className="review-content">
+            {writeContent}
+            <div className="delete" onClick={this.removeContent}>
+              🙅🏻‍♂️
+            </div>
+          </div>
         )}
       </>
     );

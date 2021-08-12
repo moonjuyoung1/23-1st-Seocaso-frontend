@@ -1,0 +1,111 @@
+{
+  "menus": [
+    {
+      "id": 1,
+      "url": "https://i.imgur.com/ehdfhcb.jpg",
+      "menu_name": "카페라떼",
+      "price": "4500원"
+    },
+    {
+      "id": 2,
+      "url": "https://i.imgur.com/lTe8HBB.jpg",
+      "menu_name": "카푸치노",
+      "price": "4500원"
+    },
+    {
+      "id": 3,
+      "url": "https://i.imgur.com/ZbyIWBD.jpg",
+      "menu_name": "에스프레소",
+      "price": "4000원"
+    },
+    {
+      "id": 4,
+      "url": "https://i.imgur.com/N3I2h2D.jpg",
+      "menu_name": "녹차라떼",
+      "price": "4500원"
+    }
+  ],
+  "reviews": [
+    {
+      "nickname": "최혜림",
+      "profile_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+      "star_rating": "4.0",
+      "content": "분위기 짱",
+      "review_like": 0,
+      "comment_on_review": 0
+    },
+    {
+      "nickname": "김다슬",
+      "profile_image": "sdfsdfadsf",
+      "star_rating": "2.0",
+      "content": "분위기 좋아요",
+      "review_like": 0,
+      "comment_on_review": 0
+    },
+    {
+      "nickname": "소진수",
+      "profile_image": "sdfsdfadsf",
+      "star_rating": "1.0",
+      "content": "별로였네요",
+      "review_like": 0,
+      "comment_on_review": 0
+    }
+  ],
+  "informations": [
+    {
+      "id": 1,
+      "name": "모리츠 플라츠",
+      "business_hour": "매일 12:00 ~ 23:00 연중무휴",
+      "address": "서울 마포구 와우산로 174",
+      "phone_number": "010-7546-7122",
+      "description": "홍대에 위치한 카페&숍 입니다.",
+      "review_ranking": 1,
+      "star_rating_ranking": 4,
+      "likes": 0,
+      "cafe_image": "https://i.imgur.com/pzMvbm8.jpg",
+      "background_image": "https://i.imgur.com/DQOGc0U.jpg",
+      "gallery_image": [
+        { "index": 1, "img": "https://i.imgur.com/IB7XZxC.jpg" },
+        { "index": 2, "img": "https://i.imgur.com/PkrGVsX.jpg" },
+        { "index": 3, "img": "https://i.imgur.com/DQOGc0U.jpg" },
+        { "index": 4, "img": "https://i.imgur.com/pEjMJKS.jpg" },
+        { "index": 5, "img": "https://i.imgur.com/LuGwdD0.jpg" },
+        { "index": 6, "img": "https://i.imgur.com/ycEL26q.jpg" },
+        { "index": 7, "img": "https://i.imgur.com/pzMvbm8.jpg" }
+      ],
+      "evaluation_graphs": [130, 50, 192, 10, 391, 583, 192, 212, 731, 392]
+    }
+  ],
+  "recommendation": [
+    {
+      "cafe_name": "모리츠 플라츠",
+      "average_star_rating": "2.2",
+      "url": "https://i.imgur.com/pzMvbm8.jpg"
+    },
+    {
+      "cafe_name": "alwaysau8ust",
+      "average_star_rating": "0",
+      "url": "https://i.imgur.com/99meB8B.jpg"
+    },
+    {
+      "cafe_name": "braunhaus",
+      "average_star_rating": "0",
+      "url": "https://i.imgur.com/ut17HVO.jpg"
+    },
+    {
+      "cafe_name": "모리츠 플라워",
+      "average_star_rating": "2.0",
+      "url": "https://i.imgur.com/pzMvbm8.jpg"
+    },
+    {
+      "cafe_name": "alwayshungry",
+      "average_star_rating": "0",
+      "url": "https://i.imgur.com/99meB8B.jpg"
+    },
+    {
+      "cafe_name": "브라운해우소",
+      "average_star_rating": "0",
+      "url": "https://i.imgur.com/ut17HVO.jpg"
+    }
+  ]
+}
