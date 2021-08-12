@@ -90,6 +90,19 @@ class Mypage extends React.Component {
     );
   };
 
+  postlike = target => {
+    this.setState(
+      {
+        url: target,
+        rateCount: 0,
+        likeCount: 0,
+      },
+      () => {
+        this.likedFetch();
+      }
+    );
+  };
+
   render() {
     let likeMarginLeft = this.state.likeCount * -178;
     let likeMarginRight = this.state.likeCount * -178;
@@ -203,7 +216,7 @@ class Mypage extends React.Component {
                   <Filter
                     type="like"
                     modal={this.hadleModal}
-                    postRate={this.postRate}
+                    postRate={this.postlike}
                     ratedFetch={this.likedFetch}
                   />
                 )}

@@ -14,19 +14,8 @@ class Comment extends React.Component {
   constructor() {
     super();
     this.state = {
-      commentList: [],
       count: 0,
     };
-  }
-
-  componentDidMount() {
-    fetch('./data/Mockdata.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          commentList: data.reviews,
-        });
-      });
   }
 
   ClickRight = () => {
@@ -38,8 +27,9 @@ class Comment extends React.Component {
   };
 
   render() {
+    const { commentList } = this.props;
     console.log(this.state.commentList);
-    const { commentList, count } = this.state;
+    const { count } = this.state;
     let marginLeft = count * -300;
     let marginRight = count * -300;
     let rightEnd = commentList.length * -300 + 900;

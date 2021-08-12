@@ -3,7 +3,7 @@
 .review-box {
   @include flex(row, space-between, center);
   position: relative;
-  left: 459px;
+  left: 26.9%;
   width: 638px;
   padding: 25px;
   background-color: $color-white;
@@ -27,7 +27,7 @@
 .review-content {
   @include flex(row, space-between, center);
   position: relative;
-  left: 459px;
+  left: 26.9%;
   width: 638px;
   padding: 25px;
   background-color: $color-white;
