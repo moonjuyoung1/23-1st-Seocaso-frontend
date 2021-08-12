@@ -8,24 +8,24 @@
   z-index: 9;
   background-color: #fff;
   border-bottom: 1px solid #ebebeb;
-  
+
   .nav-wrapper {
     @include flex(row, space-between, center);
     max-width: 1320px;
     padding: 10px 30px;
     margin-left: auto;
     margin-right: auto;
-    
+
     img {
       width: 150px;
     }
-  
+
     .search {
       @include flex(row, space-between, center);
       position: relative;
 
       .search-box {
-        padding-left:10px;
+        padding-left: 10px;
         background-color: #f5f5f5;
 
         .search-icon {
@@ -42,23 +42,24 @@
       }
 
       .not-login {
-        display: none;
+        // display: none;
 
-        button {
+        .nav-button {
           margin-left: 20px;
-          padding: 6px 9px; 
+          padding: 6px 9px;
           border: none;
           background-color: #fff;
         }
-        
-        button:last-child {
+
+        .signup-button {
           border: 1px solid #b9b9bd;
           border-radius: 6px;
         }
       }
 
       .login {
-        @include flex (row, space-between, center);
+        display: none;
+        @include flex(row, space-between, center);
 
         div:first-child {
           padding: 0 20px;
