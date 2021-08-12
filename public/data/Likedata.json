@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "image": "23-1st-Seocaso-frontend/src/assets/images/cafe1.jpg",
+    "image": "./images/cafe1.jpg",
     "cafeName": "스타벅스",
     "evaluation": "평가함 ★ 4.8"
   },
   {
     "id": 2,
-    "image": "./assets/images/cafe3.jpg",
+    "image": "./images/cafe2.jpg",
     "cafeName": "모리츠 플라츠",
     "evaluation": "평가함 ★ 4.6"
   },
   {
     "id": 3,
-    "image": "./assets/images/cafe4.jpg",
+    "image": "./images/cafe3.jpg",
     "cafeName": "이디아 커피점",
     "evaluation": "평가함 ★ 4.4"
   },
   {
     "id": 4,
-    "image": "./assets/images/cafe5.jpg",
+    "image": "./images/cafe4.jpg",
     "cafeName": "탐엔탐스 강남점",
     "evaluation": "평가함 ★ 3.4"
   },
   {
     "id": 5,
-    "image": "./assets/images/cafe6.jpg",
+    "image": "./images/cafe5.jpg",
     "cafeName": "스타벅스 수원점",
     "evaluation": "평가함 ★ 3.5"
   },
   {
     "id": 6,
-    "image": "./assets/images/main_thumbnail01.jpg",
+    "image": "./images/cafe6.jpg",
     "cafeName": "스타벅스 서초점",
     "evaluation": "평가함 ★ 5.0"
   },
