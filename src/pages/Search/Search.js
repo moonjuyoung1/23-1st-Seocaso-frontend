@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { SEARCH_RESULT } from '../../config';
+import { API } from '../../config';
 import SearchList from './SearchList';
 import './Search.scss';
 
@@ -14,7 +14,7 @@ class Search extends React.Component {
   componentDidMount() {
     // Nav에서 넘겨받은 검색어를 쿼리파라미터로 백에 요청
     const searchKeyword = this.props.location.state.keyword;
-    fetch(`${SEARCH_RESULT}${searchKeyword}`)
+    fetch(`${API.SEARCH_RESULT}${searchKeyword}`)
       .then(data => data.json())
       .then(data => {
         this.setState({
