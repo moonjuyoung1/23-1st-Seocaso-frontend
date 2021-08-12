@@ -51,12 +51,6 @@ class Comment extends React.Component {
               <h2 className="comment-name">리뷰</h2>
               <div className="comment-number">1500+</div>
             </div>
-            <div className="more-container">
-              <div className="more">
-                더보기
-                {/* <a alt="more" href={'#'}></a> */}
-              </div>
-            </div>
           </header>
           <div className="card-container">
             <ul

@@ -5,8 +5,6 @@ import Stars from './Stars';
 
 import './Top.scss';
 
-/* 평가하기(stars) 기능 로직 정리되면 컴포넌트화 하기 */
-
 class Top extends React.Component {
   constructor() {
     super();

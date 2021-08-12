@@ -26,16 +26,6 @@ class LikeBtn extends React.Component {
       likes: count,
     });
   };
-  // btnClrChange = () => {
-  //   if (this.state.likes > 0) {
-  //     return 'shop-bton-words-contianer-disabled';
-  //   }
-  // };
-
-  // 좋아요 버튼 변경 애니메이션
-  // 버튼을 누르면 like state가 변경된다
-  // 변경된 스테이트를 조건으로 줘서
-  // 컨테이너 + 버튼1 + 버튼2의 클래스를 변경하여 스타일을 변경한다
 
   render() {
     let { likes } = this.state;

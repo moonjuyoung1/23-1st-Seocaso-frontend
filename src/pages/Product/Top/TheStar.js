@@ -11,7 +11,6 @@ class TheStar extends React.Component {
         index={index}
         onMouseMove={hoverStar}
         OnClick={clickStar}
-        // onMouseOut={outStar}
       >
         {index - rating === 0.5 && <div className="halfStar" index={index} />}
         {index <= rating && <div className="fullStar" index={index} />}

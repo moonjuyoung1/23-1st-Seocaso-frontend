@@ -5,6 +5,7 @@ import Menu from './Menu';
 import Graph from './Graph';
 import Comment from './Comment';
 import SideInfo from './SideInfo';
+import Review from './Review';
 // import Recommend from './Recommend';
 
 import './Body.scss';
@@ -34,6 +35,7 @@ class Body extends React.Component {
     return (
       <div className="body-container">
         <div>
+          <Review />
           <div className="body-container">
             <div className="main-info">
               <Info />
