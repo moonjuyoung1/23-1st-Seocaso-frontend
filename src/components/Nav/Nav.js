@@ -13,6 +13,7 @@ class Nav extends React.Component {
       searchInput: '',
       loginOnModal: false,
       signupOnModal: false,
+      profile: [],
     };
   }
 
@@ -69,37 +70,40 @@ class Nav extends React.Component {
               />
             </div>
             {/* merge후 로그인시 .login / 비로그인시 .not-login 보이도록 하기*/}
-            <div className="not-login">
-              <button className="nav-button" onClick={this.hadleLoginModal}>
-                로그인
-              </button>
-              {this.state.loginOnModal && (
-                <LoginModal
-                  checkLogin={this.hadleLoginModal}
-                  checkSignup={this.hadleSignupModal}
-                  checkonSign={this.hadleSignupLoginModal}
-                />
-              )}
-              <button
-                className="nav-button signup-button "
-                onClick={this.hadleSignupModal}
-              >
-                회원가입
-              </button>
-              {this.state.signupOnModal && (
-                <SignupModal
-                  checkLogin={this.hadleLoginModal}
-                  checkSignup={this.hadleSignupModal}
-                  checkonSign={this.hadleSignupLoginModal}
-                />
-              )}
-            </div>
-            <div className="login">
-              <div>다슬님</div>
-              <div>
-                <img alt="프로필사진" src="../../images/profilephoto.png" />
+            {localStorage.getItem('TOKEN') ? (
+              <div className="not-login">
+                <button className="nav-button" onClick={this.hadleLoginModal}>
+                  로그인
+                </button>
+                {this.state.loginOnModal && (
+                  <LoginModal
+                    checkLogin={this.hadleLoginModal}
+                    checkSignup={this.hadleSignupModal}
+                    checkonSign={this.hadleSignupLoginModal}
+                  />
+                )}
+                <button
+                  className="nav-button signup-button "
+                  onClick={this.hadleSignupModal}
+                >
+                  회원가입
+                </button>
+                {this.state.signupOnModal && (
+                  <SignupModal
+                    checkLogin={this.hadleLoginModal}
+                    checkSignup={this.hadleSignupModal}
+                    checkonSign={this.hadleSignupLoginModal}
+                  />
+                )}
               </div>
-            </div>
+            ) : (
+              <div className="login">
+                <div>다슬님</div>
+                <div>
+                  <img alt="프로필사진" src="../../images/profilephoto.png" />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </nav>

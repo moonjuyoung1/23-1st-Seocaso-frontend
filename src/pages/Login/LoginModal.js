@@ -38,6 +38,13 @@ class LoginModal extends React.Component {
     this.props.history.push('/main');
   };
 
+  handleEnter = e => {
+    if (e.key === 'Enter') {
+      this.handleFetch(e);
+      console.log('성공');
+    }
+  };
+
   handleInput = e => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -67,6 +74,7 @@ class LoginModal extends React.Component {
                 className="input-password"
                 placeholder="비밀번호"
                 onChange={this.handleInput}
+                onKeyDown={this.handleEnter}
                 name="password"
               />
               <button className="input-button" onClick={this.handleFetch}>
