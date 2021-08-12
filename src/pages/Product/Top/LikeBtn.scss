@@ -1,0 +1,86 @@
+@import '../../../styles/common.scss';
+
+.cross-disabled {
+  transform: rotate(45deg);
+  color: white;
+}
+
+.shop-btn-disabled {
+  @include wh(203px, 100%);
+  background-color: $color-black;
+  border-radius: 5px 0 0 5px;
+  border-style: none;
+  color: $color-black;
+  animation: 0.5s ease-in;
+  cursor: pointer;
+
+  .see {
+    color: white;
+    margin-left: 10px;
+    font-size: 17px;
+  }
+}
+
+.shop-btn2-disabled {
+  @include wh(51px, 40px);
+  background-color: $color-black;
+  border-radius: 0 5px 5px 0;
+  border-style: none;
+  border-left: 2px solid $color-bg;
+  color: $color-bg;
+}
+
+.shop-btn-merge {
+  display: flex;
+  height: 40px;
+
+  .shop-btn {
+    @include wh(203px, 100%);
+    background-color: $color-main;
+    border-radius: 5px 0 0 5px;
+    border-style: none;
+    color: white;
+
+    &:hover {
+      // background-color: rgb(109, 89, 64);
+      cursor: pointer;
+    }
+
+    .shop-btn-words-container {
+      &:hover > .cross {
+        animation: rotation 2s infinite linear;
+      }
+
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+    }
+    .see {
+      margin-left: 10px;
+      font-size: 17px;
+    }
+  }
+  .shop-btn2 {
+    @include wh(51px, 40px);
+    background-color: $color-main;
+    border-radius: 0 5px 5px 0;
+    border-style: none;
+    border-left: 2px solid rgb(129, 88, 35);
+    color: white;
+
+    &:hover {
+      // background-color: rgb(109, 89, 64);
+      cursor: pointer;
+    }
+
+    &:hover > .triangle {
+      margin-top: 7px;
+      transition: 300ms ease-in-out;
+    }
+  }
+}

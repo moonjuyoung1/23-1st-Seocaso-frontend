@@ -1,0 +1,169 @@
+@import '../../../styles/common.scss';
+
+.comment-section {
+  margin-top: 25px;
+  border-bottom: 2px solid whitesmoke;
+
+  .comment-container {
+    @include flex(column, flex-start, space-between);
+    width: 100%;
+
+    .comment-header {
+      @include flex(row, space-between, center);
+
+      .comment-left {
+        @include flex(row);
+
+        .comment-name {
+          font-size: 20px;
+        }
+
+        .comment-number {
+          margin-left: 5px;
+          color: grey;
+          font-weight: 700;
+          font-size: 13px;
+        }
+      }
+      .more-container {
+        .more {
+          color: $color-main;
+          font-weight: 700;
+        }
+      }
+    }
+    .card-container {
+      @include flex(column, center, none);
+      position: relative;
+      height: 339px;
+
+      .card-lists {
+        @include flex(row, flex-start, center);
+        transition: margin 0.5s ease-in-out;
+
+        &:hover > .go-left {
+          opacity: 1;
+        }
+
+        &:hover > .go-right {
+          opacity: 1;
+        }
+
+        .go-css {
+          position: absolute;
+          top: 150px;
+          font-size: 30px;
+          opacity: 0;
+          z-index: 1;
+        }
+        .go-left {
+          left: 10px;
+        }
+        .go-right {
+          right: 10px;
+        }
+
+        .comment-card {
+          width: 295px;
+          margin-right: 10px;
+          padding: 0 12px;
+          background: #f2f2f2;
+          border-radius: 15px;
+
+          .card-top {
+            @include flex(row, space-between, center);
+            height: 56px;
+            padding-top: 3px;
+            border-bottom: 2px solid #e5e5e5;
+
+            .top-face {
+              @include flex(row, flex-start, center);
+
+              .img-container {
+                @include wh(30px, 30px);
+
+                .top-face-img {
+                  @include wh(100%, 100%);
+                  border-radius: 15px;
+                  object-fit: cover;
+                }
+              }
+              .top-name {
+                margin-left: 10px;
+              }
+            }
+            .top-rating {
+              padding: 5px;
+              background: white;
+              border-radius: 5px;
+              color: $color-main;
+              font-size: 13px;
+              text-align: center;
+            }
+          }
+          .card-mid {
+            @include wh(270px, 120px);
+            border-bottom: 2px solid #e5e5e5;
+
+            .mid-words {
+              height: 100%;
+              padding: 15px 0;
+              font-size: 15px;
+              white-space: pre-wrap;
+              word-break: break-all;
+              cursor: pointer;
+            }
+          }
+          .card-bot {
+            @include flex(row, flex-start, center);
+            padding: 15px 0;
+            border-bottom: 2px solid #e5e5e5;
+            font-size: 15px;
+
+            .bot-em {
+              margin: 0 20px 1px 5px;
+              font-size: 13px;
+            }
+          }
+
+          .card-likes-disabled {
+            @include flex(row);
+            width: 65px;
+            margin: 10px;
+            background-color: $color-main;
+            transition: 0.3s ease-in-out;
+            border-radius: 5px;
+
+            .likes-disabled {
+              font-size: 15px;
+              color: $color-bg;
+              font-weight: 700;
+              border: none;
+              background: none;
+              cursor: pointer;
+              text-align: center;
+              margin: 3px;
+            }
+          }
+
+          .card-likes {
+            @include flex(row);
+            width: 60px;
+            margin: 5px;
+            transition: 0.3s ease-in-out;
+
+            .likes {
+              font-size: 15px;
+              color: $color-main;
+              font-weight: 700;
+              border: none;
+              background: none;
+              cursor: pointer;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

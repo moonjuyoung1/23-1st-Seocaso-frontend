@@ -1,0 +1,136 @@
+@import '../../../styles/common.scss';
+/*
+Layout Properties (position, float, clear, display)
+Box Model Properties (width, height, margin, padding)
+Visual Properties (color, background, border, box-shadow)
+Typography Properties (font-size, font-family, text-align, text-transform)
+Misc Properties (cursor, overflow, z-index)
+*/
+.top-top {
+  color: $color-black;
+  border-bottom: 1px solid lightgrey;
+
+  .top-backimg {
+    position: relative;
+
+    .backimg-container {
+      display: flex;
+      flex-direction: row;
+
+      .backimg-left {
+        flex: 1 1 0%;
+        background-color: rgb(24, 23, 20);
+      }
+      .backimg {
+        @include wh(1024px, 394px);
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        .backimg-shadow-left {
+          width: 150px;
+          background-image: linear-gradient(
+            -90deg,
+            rgba(24, 23, 20, 0) 0%,
+            rgb(24, 23, 20) 100%
+          );
+        }
+        .backimg-shadow-right {
+          width: 150px;
+          background-image: linear-gradient(
+            90deg,
+            rgba(34, 40, 39, 0) 0%,
+            #222827 100%
+          );
+        }
+        .backimg-wrap {
+          @include wh(100%, 100%);
+          position: absolute;
+          background-image: linear-gradient(
+            -180deg,
+            rgba(0, 0, 0, 0.35) 2%,
+            rgba(0, 0, 0, 0.2) 70%,
+            rgba(0, 0, 0, 0.5) 100%
+          );
+        }
+      }
+      .backimg-right {
+        flex: 1 1 0%;
+        background-color: rgb(24, 23, 20);
+      }
+    }
+    .backinfo-container {
+      @include flex(row);
+      @include wh(100%, 34px);
+      position: absolute;
+      bottom: 0px;
+      margin: 0 auto;
+
+      .poster-info-container {
+        @include flex(row, flex-start);
+        @include wh(960px, 100%);
+        position: relative;
+
+        .poster-container {
+          @include wh(162px, 234px);
+          position: relative;
+          top: 110px;
+          margin-right: 15px;
+          border: 2px solid #fafafa;
+          border-radius: 3px;
+
+          .poster {
+            @include wh(100%, 100%);
+            object-fit: cover;
+          }
+        }
+        .limit-info {
+          @include flex(row, flex-start, center);
+          color: darkgrey;
+          font-size: 13px;
+
+          .limit-info-list {
+            margin-left: 15px;
+
+            em {
+              color: $color-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+  .top-info-container {
+    @include flex(row);
+    background-color: $color-white;
+    padding: 20px 16px 22px;
+
+    .top-info {
+      @include flex(column, center, flex-start);
+      padding-left: 193px;
+      width: 960px;
+
+      .cafe-name {
+        font-weight: 700;
+        font-size: 33px;
+      }
+      .cafe-category {
+        margin-top: 8px;
+        color: grey;
+        font-size: 17px;
+      }
+      .cafe-rate {
+        width: 100%;
+        margin-top: 16px;
+        padding: 10px 0px 12px 3px;
+        border-top: 1px solid lightgrey;
+        border-bottom: 1px solid lightgrey;
+        font-size: 17px;
+      }
+      .shop-btn-container {
+        @include flex(row, space-between, flex-end);
+        @include wh(550px, 79px);
+      }
+    }
+  }
+}
