@@ -18,6 +18,7 @@
 
     img {
       width: 150px;
+      cursor: pointer;
     }
 
     .search {
@@ -42,8 +43,6 @@
       }
 
       .not-login {
-        // display: none;
-
         .nav-button {
           margin-left: 20px;
           padding: 6px 9px;
@@ -58,7 +57,6 @@
       }
 
       .login {
-        display: none;
         @include flex(row, space-between, center);
 
         div:first-child {

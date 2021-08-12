@@ -1,7 +1,7 @@
 import React from 'react';
-import './SignupModal.scss';
-import LoginModal from '../Login/LoginModal';
 import { withRouter } from 'react-router-dom';
+import { API } from '../../config';
+import './SignupModal.scss';
 
 class SignupModal extends React.Component {
   constructor() {
@@ -15,7 +15,7 @@ class SignupModal extends React.Component {
 
   handleFetch = e => {
     e.preventDefault();
-    fetch('http://10.58.0.59:8000/users/signin', {
+    fetch(`${API.SIGNUP}`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
