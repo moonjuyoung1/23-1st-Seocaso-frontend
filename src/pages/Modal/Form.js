@@ -5,8 +5,27 @@ import Layout from './Layout';
 import './Form.scss';
 
 class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      signupEmail: '',
+      signinEmail: '',
+      signupPw: '',
+      signinPw: '',
+      name: '',
+    };
+  }
+
+  handleInputs = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
   render() {
-    const { type, title, inputData } = this.props;
+    console.log(this.state.email, this.state.pw);
+    const { name, signinEmail, signinPw, signupEmail, signupPw } = this.state;
+    const { type, title, inputData, changeModalContents } = this.props;
 
     return (
       <Layout>
@@ -14,7 +33,12 @@ class Form extends React.Component {
         <div>
           <form className="input-wrapup">
             {inputData.map((input, idx) => (
-              <Input key={idx} type={input.type} text={input.text} />
+              <Input
+                key={idx}
+                type={input.type}
+                text={input.text}
+                handleInputs={this.handleInputs}
+              />
             ))}
             <Button value={title} />
           </form>
@@ -27,14 +51,14 @@ class Form extends React.Component {
               </div>
               <div className="account">
                 계정이 없으신가요?{' '}
-                <button onClick={this.props.checkonSign}>회원가입</button>
+                <button onClick={changeModalContents}>회원가입</button>
               </div>
             </div>
           )}
           {type === 'signUp' && (
             <div className="login-botton">
               이미 가입하셨나요?{' '}
-              <button onClick={this.props.checkonSign}>로그인</button>
+              <button onClick={changeModalContents}>로그인</button>
             </div>
           )}
         </div>

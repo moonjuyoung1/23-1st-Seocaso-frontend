@@ -9,7 +9,6 @@ class Login extends React.Component {
     this.state = {
       loginOnModal: false,
       signupOnModal: false,
-      Modal: true,
     };
   }
 
@@ -37,7 +36,11 @@ class Login extends React.Component {
       <>
         <button onClick={this.hadleLoginModal}>로그인</button>
         {this.state.loginOnModal && (
-          <Modal type="signIn" checkLogin={this.hadleLoginModal} />
+          <Modal
+            type="signIn"
+            closeModal={this.hadleLoginModal}
+            changeModalContents={this.hadleSignupLoginModal}
+          />
           // <LoginModal
           //   checkLogin={this.hadleLoginModal}
           //   checkSignup={this.hadleSignupModal}
@@ -51,7 +54,11 @@ class Login extends React.Component {
           //   checkSignup={this.hadleSignupModal}
           //   checkonSign={this.hadleSignupLoginModal}
           // />
-          <Modal type="signUp" checkSignup={this.hadleSignupModal} />
+          <Modal
+            type="signUp"
+            closeModal={this.hadleSignupModal}
+            changeModalContents={this.hadleSignupLoginModal}
+          />
         )}
       </>
     );

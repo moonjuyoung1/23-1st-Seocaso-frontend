@@ -88,7 +88,7 @@ class LoginModal extends React.Component {
               <hr />
               <span>OR</span>
             </div>
-            {/* <FontAwesomeIcon icon={faFacebookF} className="facebook" /> */}
+
             <button className="input-facebook">Facebook 으로 로그인</button>
           </div>
         </div>

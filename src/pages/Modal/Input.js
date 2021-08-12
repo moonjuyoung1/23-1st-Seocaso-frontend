@@ -2,13 +2,14 @@ import React from 'react';
 
 class Input extends React.Component {
   render() {
-    const { key, type, text } = this.props;
+    const { type, text, handleInputs } = this.props;
+
     return (
       <input
         type={type}
         className="input-email"
         placeholder={text}
-        onChange={this.handleInput}
+        onChange={handleInputs}
         name={type}
       />
     );

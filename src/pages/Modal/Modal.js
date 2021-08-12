@@ -3,15 +3,15 @@ import Form from './Form';
 
 class Modal extends React.Component {
   render() {
-    const { type } = this.props;
+    const { type, closeModal, changeModalContents } = this.props;
     return (
-      <div className="modal-login" onClick={this.props.checkLogin}>
-        {type === 'signUp' && (
-          <Form type="signUp" title="회원가입" inputData={SIGNUP_DATA} />
-        )}
-        {type === 'signIn' && (
-          <Form type="signIn" title="로그인" inputData={SIGNIN_DATA} />
-        )}
+      <div className="modal-login" onClick={closeModal}>
+        <Form
+          type={type}
+          title={type === 'signUp' ? '회원가입' : '로그인'}
+          inputData={type === 'signUp' ? SIGNUP_DATA : SIGNIN_DATA}
+          changeModalContents={changeModalContents}
+        />
 
         {/* <Form type="signUp" title="회원가입" inputData={SIGNUP_DATA} />
         <Form type="signIn" title="로그인" inputData={SIGNIN_DATA} /> */}
@@ -26,22 +26,22 @@ const SIGNUP_DATA = [
     text: '이름',
   },
   {
-    type: 'email',
+    type: 'singupEmail',
     text: '이메일',
   },
   {
-    type: 'password',
-    text: '비밀번호',
+    type: 'signupPw',
+    text: '비밀호',
   },
 ];
 
 const SIGNIN_DATA = [
   {
-    type: 'email',
+    type: 'signinEmail',
     text: '이메일',
   },
   {
-    type: 'password',
+    type: 'signinPw',
     text: '비밀번호',
   },
 ];
