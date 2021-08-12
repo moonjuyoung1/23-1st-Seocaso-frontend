@@ -22,4 +22,5 @@ export const API = {
   RAITING_STAR: `${BASE_URL}/cafes?ordering=high_rating`, // 메인 carousel 별점순
   RAITING_REVIEW: `${BASE_URL}/cafes?ordering=high_count`, // 메인 carousel 리뷰순
   TOKEN_PROFILE: `${BASE_URL}/users/signin`, // 로그인시 토큰, 프로필 이미지
+  SEARCH_RESULT: `${BASE_URL}/cafes?q=`, // 검색결과 페이지
 };
