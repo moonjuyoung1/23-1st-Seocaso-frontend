@@ -1,5 +1,5 @@
-import React from 'react';
 
+import React from 'react';
 import Ranking from './Ranking/Ranking';
 import './Main.scss';
 
@@ -44,3 +44,4 @@ class Main extends React.Component {
 }
 
 export default Main;
+
