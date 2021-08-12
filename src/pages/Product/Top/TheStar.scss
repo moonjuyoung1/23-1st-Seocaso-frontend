@@ -1,0 +1,25 @@
+@import '../../../styles/common.scss';
+
+.emptyStar {
+  @include wh(45px, 45px);
+  position: relative;
+  cursor: pointer;
+  background: url('../../../assets/images/GreyStar.svg');
+
+  .halfStar {
+    @include wh(45px, 45px);
+    background: url('../../../assets/images/TheHalfStar.svg');
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .fullStar {
+    @include wh(45px, 45px);
+    background: url('../../../assets/images/YellowStar.svg');
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../../styles/common.scss';
+
+.body-container {
+  padding: 15px 0 48px 0;
+  background-color: $color-bg;
+
+  div {
+    .body-container {
+      @include flex(row, center, flex-start);
+
+      .main-info {
+        width: 640px;
+        padding: 25px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        background-color: white;
+        overflow: hidden;
+      }
+      @media screen and (max-width: 1078px) {
+        .main-side {
+          display: none;
+        }
+      }
+    }
+  }
+}
