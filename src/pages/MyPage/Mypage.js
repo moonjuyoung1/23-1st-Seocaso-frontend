@@ -139,7 +139,7 @@ class Mypage extends React.Component {
             </div>
             <div className="top-info-container">
               <div className="top-info">
-                <h1 className="cafe-name">여기에 유저ID</h1>
+                <h1 className="cafe-name">다슬님</h1>
                 <div className="cafe-rate">오늘 당장 위코드를 시작하세요.</div>
               </div>
             </div>
