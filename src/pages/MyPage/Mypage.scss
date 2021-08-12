@@ -1,6 +1,6 @@
 @import '../../styles/common.scss';
+
 .top-top {
-  // height: 629px;
   border-bottom: 1px solid lightgrey;
   color: $color-black;
   .top-backimg {
@@ -18,9 +18,9 @@
         position: relative;
         display: flex;
         justify-content: space-between;
-        background: no-repeat center/100% url('../../image/rose.jpg');
+        background: no-repeat center/100% url('../../assets/images/cafe1.jpg');
         width: 1024px;
-        height: 394px;
+        height: 464px;
         .backimg-shadow-left {
           width: 150px;
           background-image: linear-gradient(
@@ -70,8 +70,9 @@
         .poster-container {
           position: relative;
           top: 80px;
+          right: 50px;
           margin-right: 15px;
-          width: 162px;
+          width: 220px;
           height: 220px;
           border: none;
           border-radius: 3px;
@@ -79,7 +80,7 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
-            color: gray;
+            border-radius: 50%;
           }
         }
       }
@@ -105,12 +106,12 @@
         color: grey;
       }
       .cafe-rate {
-        font-size: 17px;
+        font-size: 13px;
         margin-top: 16px;
         padding: 10px 0px 12px 3px;
         border-top: 1px solid lightgrey;
-        // border-bottom: 1px solid lightgrey;
-        width: 100%;
+        line-height: 20px;
+        width: 580px;
       }
     }
   }
@@ -122,9 +123,7 @@
   padding: 0 20px;
   border: black 3px soild;
   margin-bottom: 60px;
-  h2 {
-    //padding-left: 25px;
-  }
+  overflow: hidden;
 }
 
 .images-container {
@@ -140,11 +139,12 @@
 .image-content {
   position: relative;
   width: 1200px;
+  height: 353px;
 
-  overflow: hidden;
   ul {
     @include flex(row, space-between);
     max-width: 1320px;
+    transition: 0.3s ease-in-out;
   }
 }
 
@@ -184,15 +184,16 @@
 
 .circle-right {
   font-size: 40px;
-  position: relative;
-  left: 1100px;
-  bottom: 200px;
+  position: absolute;
+  right: -95px;
+  bottom: 180px;
   color: gray;
 }
 
 .circle-left {
   font-size: 40px;
-  position: relative;
-  bottom: 200px;
+  position: absolute;
+  left: 0px;
+  bottom: 180px;
   color: gray;
 }

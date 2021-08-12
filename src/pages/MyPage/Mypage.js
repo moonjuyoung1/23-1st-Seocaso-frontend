@@ -6,12 +6,8 @@ import Filter from './Filter';
 import {
   faChevronCircleLeft,
   faChevronCircleRight,
-  faUserCircle,
   faChevronDown,
-  faArrowLeft,
-  faCog,
 } from '@fortawesome/free-solid-svg-icons';
-import Like from './Like';
 
 class Mypage extends React.Component {
   goToMain = () => {
@@ -21,50 +17,103 @@ class Mypage extends React.Component {
   constructor() {
     super();
     this.state = {
-      evaluation: [],
-      modal: false,
-      like: [],
-      currentIndex: 0,
+      modal: 0,
+      likeList: [],
+      rateList: [],
+      url: '',
+      likeCount: 0,
+      rateCount: 0,
     };
   }
 
+  likeModal = () => {
+    this.setState({
+      modal: 1,
+    });
+  };
+
+  rateModal = () => {
+    this.setState({
+      modal: 2,
+    });
+  };
+
   hadleModal = () => {
     this.setState({
-      modal: !this.state.modal,
+      modal: 0,
     });
   };
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/Likedata.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          evaluation: data,
-        });
-      });
-
-    fetch('http://localhost:3000/data/Likedata.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          like: data,
-        });
-      });
+    this.ratedFetch();
+    this.likedFetch();
   }
 
-  handleButtonClick = () => {
-    const { currentIndex } = this.state;
-    this.setState({
-      currentIndex: !currentIndex ? currentIndex - 50 : currentIndex + 50,
-    });
+  likedFetch = () => {
+    fetch(`http://10.58.0.59:8000/cafes/user/1?category=liked${this.state.url}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          likeList: data.CAFE_LIST,
+        });
+      });
+  };
+
+  ratedFetch = () => {
+    console.log(2222);
+    fetch(
+      `http://10.58.0.59:8000/cafes/user/1?category=rated${this.state.url}`,
+      {
+        method: 'GET',
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        console.log(3333);
+        this.setState({
+          rateList: data.CAFE_LIST,
+        });
+      });
+  };
+
+  likeClickRight = () => {
+    this.setState(zero => ({ likeCount: zero.likeCount + 1 }));
+  };
+  rateClickRight = () => {
+    this.setState(zero => ({ rateCount: zero.rateCount + 1 }));
+  };
+
+  likeClickLeft = () => {
+    this.setState(zero => ({ likeCount: zero.likeCount - 1 }));
+  };
+  rateClickLeft = () => {
+    this.setState(zero => ({ rateCount: zero.rateCount - 1 }));
+  };
+
+  postRate = target => {
+    console.log(target);
+    this.setState(
+      {
+        url: target,
+        rateCount: 0,
+        likeCount: 0,
+      },
+      () => {
+        this.ratedFetch();
+      }
+    );
   };
 
   render() {
-    const { evaluation, like, currentIndex } = this.state;
+    // const { currentIndex } = this.state;
+    let likeMarginLeft = this.state.likeCount * -178;
+    let likeMarginRight = this.state.likeCount * -178;
+    let rateMarginLeft = this.state.rateCount * -178;
+    let rateMarginRight = this.state.rateCount * -178;
+    let likeRightEnd = this.state.likeList.length * -178 + 534;
+    let rateRightEnd = this.state.rateList.length * -178 + 534;
+    console.log(this.state.likeList);
+
     return (
       <>
         <div className="container">
@@ -82,35 +131,19 @@ class Mypage extends React.Component {
               <div className="backinfo-container">
                 <div className="poster-info-container">
                   <div className="poster-container">
-                    <FontAwesomeIcon icon={faUserCircle} className="poster" />
+                    <img
+                      className="poster"
+                      alt="profile"
+                      src="https://i.imgur.com/OiguW6D.jpg"
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div className="top-info-container">
               <div className="top-info">
-                <h1 className="cafe-name">
-                  사용자 이름
-                  <FontAwesomeIcon
-                    icon={faCog}
-                    className="cog"
-                    onClick={this.hadleModal}
-                  />
-                  {this.state.modal && <Filter />}
-                  <FontAwesomeIcon
-                    icon={faArrowLeft}
-                    className="arrow"
-                    onClick={this.goToMain}
-                  />
-                </h1>
-
-                <div className="cafe-rate">
-                  아이템들의 사이와 양 끝에 균일한 간격을 만들어 줍니다. 주의!
-                  IE와 엣지(Edge)에서는 지원되지 않습니다👎 이 웹사이트의 메뉴
-                  부분은 브라우저 폭이 1024px 이상일 때 space-evenly가
-                  적용되도록 했는데요, IE와 엣지에서만 space-around로 적용이
-                  되도록 처리해 두었어요.
-                </div>
+                <h1 className="cafe-name">여기에 유저ID</h1>
+                <div className="cafe-rate">오늘 당장 위코드를 시작하세요.</div>
               </div>
             </div>
           </section>
@@ -118,56 +151,92 @@ class Mypage extends React.Component {
         <div className="main-container">
           <div className="content-container">
             <section>
-              <div className="like-container">
-                <FontAwesomeIcon
-                  icon={faChevronDown}
-                  className="chevron"
-                  onClick={this.hadleModal}
-                />
-                {this.state.modal && <Filter modal={this.hadleModal} />}
-                <h2 className="content">평가한 카페 📝</h2>
-                <div className="image-content">
-                  <ul style={{ transform: `translateX(${currentIndex}%)` }}>
-                    {evaluation.map(el => {
-                      return (
-                        <Evaluation
-                          key={el.id}
-                          image={el.image}
-                          cafename={el.cafeName}
-                          evaluation={el.evaluation}
-                        />
-                      );
-                    })}
-                  </ul>
-                  <FontAwesomeIcon
-                    icon={faChevronCircleLeft}
-                    className="circle-left"
-                    onClick={this.handleButtonClick}
-                  />
-                  <FontAwesomeIcon
-                    icon={faChevronCircleRight}
-                    className="circle-right"
-                    onClick={this.handleButtonClick}
-                  />
-                </div>
-              </div>
               <div className="evaluation-container">
                 <FontAwesomeIcon
                   icon={faChevronDown}
                   className="chevron"
-                  onClick={this.hadleModal}
+                  onClick={this.rateModal}
                 />
-                {this.state.modal && <Filter modal={this.hadleModal} />}
-                <h2 className="content">좋아요 한 카페 👍</h2>
+                {this.state.modal === 2 && (
+                  <Filter
+                    type="rate"
+                    modal={this.hadleModal}
+                    postRate={this.postRate}
+                    ratedFetch={this.ratedFetch}
+                  />
+                )}
+                <h2 className="content">평가한 카페 📝</h2>
                 <div className="image-content">
-                  <ul>
-                    {like.map(el => {
+                  <ul
+                    style={{
+                      marginLeft: `${rateMarginLeft}px`,
+                      marginRight: `${rateMarginRight}px`,
+                    }}
+                  >
+                    {this.state.rateList.map(el => {
                       return (
-                        <Like
+                        <Evaluation
                           key={el.id}
                           image={el.image}
-                          cafename={el.cafeName}
-                          evaluation={el.evaluation}
+                          cafename={el.name}
+                          evaluation={el.avg_rating}
+                        />
+                      );
+                    })}
+                  </ul>
+
+                  <FontAwesomeIcon
+                    icon={faChevronCircleLeft}
+                    className="circle-left"
+                    onClick={this.rateClickLeft}
+                    style={{
+                      color: '#fafafa',
+                      display: rateMarginLeft === 0 ? 'none' : 'block',
+                    }}
+                  />
+
+                  <FontAwesomeIcon
+                    icon={faChevronCircleRight}
+                    className="circle-right"
+                    onClick={this.rateClickRight}
+                    style={{
+                      color: '#fafafa',
+                      display:
+                        rateMarginRight === rateRightEnd ? 'none' : 'block',
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div className="like-container">
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  className="chevron"
+                  onClick={this.likeModal}
+                />
+                {this.state.modal === 1 && (
+                  <Filter
+                    type="like"
+                    modal={this.hadleModal}
+                    postRate={this.postRate}
+                    ratedFetch={this.likedFetch}
+                  />
+                )}
+                <h2 className="content">좋아요 한 카페 👍</h2>
+                <div className="image-content">
+                  <ul
+                    style={{
+                      marginLeft: `${likeMarginLeft}px`,
+                      marginRight: `${likeMarginRight}px`,
+                    }}
+                  >
+                    {this.state.likeList.map(el => {
+                      return (
+                        <Evaluation
+                          key={el.id}
+                          image={el.image}
+                          cafename={el.name}
+                          evaluation={el.avg_rating}
                         />
                       );
                     })}
@@ -175,10 +244,21 @@ class Mypage extends React.Component {
                   <FontAwesomeIcon
                     icon={faChevronCircleLeft}
                     className="circle-left"
+                    onClick={this.likeClickLeft}
+                    style={{
+                      color: '#fafafa',
+                      display: likeMarginLeft === 0 ? 'none' : 'block',
+                    }}
                   />
                   <FontAwesomeIcon
                     icon={faChevronCircleRight}
                     className="circle-right"
+                    onClick={this.likeClickRight}
+                    style={{
+                      color: '#fafafa',
+                      display:
+                        likeMarginRight === likeRightEnd ? 'none' : 'block',
+                    }}
                   />
                 </div>
               </div>

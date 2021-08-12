@@ -33,6 +33,7 @@
       line-height: 48px;
       font-weight: 400;
       padding: 10px 0px;
+      cursor: pointer;
 
       &:last-child {
         margin-bottom: 30px;
@@ -44,7 +45,7 @@
 .xmark {
   color: #996633;
   position: absolute;
-  bottom: 500px;
-  left: 600px;
+  bottom: 495px;
+  right: 540px;
   font-size: 20px;
 }

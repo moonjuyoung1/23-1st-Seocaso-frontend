@@ -2,11 +2,11 @@ import React from 'react';
 
 class Like extends React.Component {
   render() {
-    const { image, cafename, evaluation } = this.props;
+    const { image, cafename } = this.props;
     return (
       <li>
         <div className="images-container">
-          <img src={image} />
+          <img alt="#" src={image} />
         </div>
         <div className="cafe-name">{cafename}</div>
       </li>
