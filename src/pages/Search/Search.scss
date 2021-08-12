@@ -8,6 +8,10 @@
   .result-cafename {
     padding: 70px 0;
 
+    .no-result {
+      text-align: center;
+    }
+
     .result-title {
       padding: 20px 5px;
       font-size: 1.4em;
@@ -17,6 +21,7 @@
     .search-result-list {
       @include flex(row, flex-start, flex-start);
       flex-wrap: wrap;
+
       li {
         width: 182px !important;
         margin: 0 3px;
@@ -24,6 +29,7 @@
 
         img {
           width: 100%;
+          object-fit: cover;
           border-radius: 5px;
         }
 

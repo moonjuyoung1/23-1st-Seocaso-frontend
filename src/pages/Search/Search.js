@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { SEARCH_RESULT } from '../../config';
 import SearchList from './SearchList';
 import './Search.scss';
 
@@ -10,8 +12,10 @@ class Search extends React.Component {
     };
   }
   componentDidMount() {
-    fetch('/data/SearchResultData.json')
-      .then(res => res.json())
+    // Nav에서 넘겨받은 검색어를 쿼리파라미터로 백에 요청
+    const searchKeyword = this.props.location.state.keyword;
+    fetch(`${SEARCH_RESULT}${searchKeyword}`)
+      .then(data => data.json())
       .then(data => {
         this.setState({
           searchResult: data,
@@ -20,21 +24,20 @@ class Search extends React.Component {
   }
 
   render() {
+    const { searchResult } = this.state;
     return (
       <div className="search-result-box">
-        <div className="result-address">
-          <SearchList
-            title="카페명 검색 결과"
-            searchResult={this.state.searchResult}
-          />
-          <SearchList
-            title="주소 검색 결과"
-            searchResult={this.state.searchResult}
-          />
-        </div>
+        <SearchList
+          title="카페명 포함 결과"
+          results={searchResult.cafe_name_results}
+        />
+        <SearchList
+          title="주소 포함 결과"
+          results={searchResult.address_search_results}
+        />
       </div>
     );
   }
 }
 
-export default Search;
+export default withRouter(Search);
