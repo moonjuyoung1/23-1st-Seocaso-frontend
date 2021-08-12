@@ -5,9 +5,8 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class Filter extends React.Component {
   shootRate = param => {
-    console.log(1111);
     this.props.postRate(param);
-    // this.props.ratedFetch();
+    this.props.ratedFetch();
     this.props.modal();
   };
 

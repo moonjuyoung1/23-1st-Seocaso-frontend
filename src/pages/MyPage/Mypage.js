@@ -3,11 +3,7 @@ import './Mypage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Evaluation from './Evaluation';
 import Filter from './Filter';
-import {
-  faChevronCircleLeft,
-  faChevronCircleRight,
-  faChevronDown,
-} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 class Mypage extends React.Component {
   goToMain = () => {
@@ -60,38 +56,28 @@ class Mypage extends React.Component {
   };
 
   ratedFetch = () => {
-    console.log(2222);
-    fetch(
-      `http://10.58.0.59:8000/cafes/user/1?category=rated${this.state.url}`,
-      {
-        method: 'GET',
-      }
-    )
+    fetch(`http://10.58.0.59:8000/cafes/user/1?category=rated${this.state.url}`)
       .then(res => res.json())
       .then(data => {
-        console.log(3333);
         this.setState({
           rateList: data.CAFE_LIST,
         });
       });
   };
 
-  likeClickRight = () => {
-    this.setState(zero => ({ likeCount: zero.likeCount + 1 }));
-  };
-  rateClickRight = () => {
-    this.setState(zero => ({ rateCount: zero.rateCount + 1 }));
-  };
-
-  likeClickLeft = () => {
-    this.setState(zero => ({ likeCount: zero.likeCount - 1 }));
-  };
-  rateClickLeft = () => {
-    this.setState(zero => ({ rateCount: zero.rateCount - 1 }));
+  clickEvent = e => {
+    if (e.target.name === 'likeright') {
+      this.setState(zero => ({ likeCount: zero.likeCount + 1 }));
+    } else if (e.target.name === 'rateright') {
+      this.setState(zero => ({ rateCount: zero.rateCount + 1 }));
+    } else if (e.target.name === 'likeleft') {
+      this.setState(zero => ({ likeCount: zero.likeCount - 1 }));
+    } else if (e.target.name === 'rateleft') {
+      this.setState(zero => ({ rateCount: zero.rateCount - 1 }));
+    }
   };
 
   postRate = target => {
-    console.log(target);
     this.setState(
       {
         url: target,
@@ -105,14 +91,12 @@ class Mypage extends React.Component {
   };
 
   render() {
-    // const { currentIndex } = this.state;
     let likeMarginLeft = this.state.likeCount * -178;
     let likeMarginRight = this.state.likeCount * -178;
     let rateMarginLeft = this.state.rateCount * -178;
     let rateMarginRight = this.state.rateCount * -178;
     let likeRightEnd = this.state.likeList.length * -178 + 534;
     let rateRightEnd = this.state.rateList.length * -178 + 534;
-    console.log(this.state.likeList);
 
     return (
       <>
@@ -184,23 +168,24 @@ class Mypage extends React.Component {
                       );
                     })}
                   </ul>
-
-                  <FontAwesomeIcon
-                    icon={faChevronCircleLeft}
-                    className="circle-left"
-                    onClick={this.rateClickLeft}
+                  <input
+                    type="button"
+                    name="rateleft"
+                    value="🤛🏻"
+                    onClick={this.clickEvent}
+                    className="button-left"
                     style={{
                       color: '#fafafa',
                       display: rateMarginLeft === 0 ? 'none' : 'block',
                     }}
                   />
-
-                  <FontAwesomeIcon
-                    icon={faChevronCircleRight}
-                    className="circle-right"
-                    onClick={this.rateClickRight}
+                  <input
+                    type="button"
+                    name="rateright"
+                    value="🤜🏻"
+                    onClick={this.clickEvent}
+                    className="button-right"
                     style={{
-                      color: '#fafafa',
                       display:
                         rateMarginRight === rateRightEnd ? 'none' : 'block',
                     }}
@@ -241,21 +226,24 @@ class Mypage extends React.Component {
                       );
                     })}
                   </ul>
-                  <FontAwesomeIcon
-                    icon={faChevronCircleLeft}
-                    className="circle-left"
-                    onClick={this.likeClickLeft}
+                  <input
+                    type="button"
+                    name="likeleft"
+                    value="🤛🏻"
+                    onClick={this.clickEvent}
+                    className="button-left"
                     style={{
                       color: '#fafafa',
                       display: likeMarginLeft === 0 ? 'none' : 'block',
                     }}
                   />
-                  <FontAwesomeIcon
-                    icon={faChevronCircleRight}
-                    className="circle-right"
-                    onClick={this.likeClickRight}
+                  <input
+                    type="button"
+                    name="likeright"
+                    value="🤜🏻"
+                    onClick={this.clickEvent}
+                    className="button-right"
                     style={{
-                      color: '#fafafa',
                       display:
                         likeMarginRight === likeRightEnd ? 'none' : 'block',
                     }}

@@ -182,18 +182,20 @@
   left: 300px;
 }
 
-.circle-right {
-  font-size: 40px;
-  position: absolute;
-  right: -95px;
-  bottom: 180px;
-  color: gray;
-}
-
-.circle-left {
-  font-size: 40px;
+.button-left {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
   position: absolute;
   left: 0px;
   bottom: 180px;
-  color: gray;
+}
+
+.button-right {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: -95px;
+  bottom: 180px;
 }
