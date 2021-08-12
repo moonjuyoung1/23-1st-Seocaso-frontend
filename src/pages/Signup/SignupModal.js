@@ -15,7 +15,7 @@ class SignupModal extends React.Component {
 
   handleFetch = e => {
     e.preventDefault();
-    fetch('http://10.58.4.232:8000/users/signin', {
+    fetch('http://10.58.0.59:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -25,10 +25,11 @@ class SignupModal extends React.Component {
     })
       .then(response => response.json())
       .then(result => console.log('결과: ', result));
+    this.props.history.push('/Main');
   };
 
   goToMain = () => {
-    this.props.history.push('/LoginModal');
+    this.props.history.push('/main');
   };
 
   handleInput = e => {
@@ -74,7 +75,7 @@ class SignupModal extends React.Component {
                         className="input-pw"
                         placeholder="비밀번호"
                         onChange={this.handleInput}
-                        name="pw"
+                        name="password"
                       />
                     </div>
                     <button className="input-button" onClick={this.handleFetch}>

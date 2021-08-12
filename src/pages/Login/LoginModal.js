@@ -14,7 +14,7 @@ class LoginModal extends React.Component {
 
   handleFetch = e => {
     e.preventDefault();
-    fetch('http://10.58.4.92:8000/users/signin', {
+    fetch('http://10.58.0.59:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -27,7 +27,7 @@ class LoginModal extends React.Component {
         if (response.TOKEN) {
           localStorage.setItem('TOKEN', response.TOKEN);
           this.props.history.push('/main');
-          this.props.checkLogin();
+          // this.props.checkLogin();
         } else {
           alert('아이디/ 비밀번호를 다시 입력해주세요!');
         }
