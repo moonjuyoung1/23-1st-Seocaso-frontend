@@ -31,7 +31,6 @@ class Menu extends React.Component {
     let marginLeft = this.state.count * -178;
     let marginRight = this.state.count * -178;
     let rightEnd = menu.length * -178 + 534;
-    console.log(menu.cafe_name);
     return (
       <section className="main-mid">
         <div className="mid-container">
@@ -62,7 +61,7 @@ class Menu extends React.Component {
               }}
             />
             {menu.map(menu => (
-              <CoffeeMenu menu={menu}>
+              <CoffeeMenu menu={menu} id={menu.id} key={menu.id}>
                 {type === 'menu' && (
                   <>
                     <img

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import { API } from '../../../config';
 import LikeBtn from './LikeBtn';
@@ -12,21 +13,37 @@ class Top extends React.Component {
     this.state = {
       infoList: [],
       cafeRate: 0,
+      score: 0,
     };
   }
   componentDidMount() {
-    fetch(`${API.CAFE_RATE}1/star-rating`)
+    fetch(`${API.CAFE_RATE}${this.props.match.params.id}/star-rating`)
       .then(res => res.json())
       .then(data => {
         this.setState({
-          cafeRate: data.result.average,
+          cafeRate: data.result,
+          score: data.score,
         });
       });
   }
 
+  postStar = star => {
+    fetch(`${API.CAFE_RATE}${this.props.match.params.id}/star-rating`, {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('TOKEN'),
+      },
+      body: JSON.stringify({
+        score: star,
+      }),
+    });
+    console.log(this.state.score);
+  };
+
   render() {
     const { cafeRate } = this.state;
     const { infoList } = this.props;
+
     return (
       <>
         <section className="top-top-top">
@@ -70,11 +87,15 @@ class Top extends React.Component {
               <h1 className="cafe-name">{infoList.name}</h1>
               <div className="cafe-category">{infoList.business_hour}</div>
               <div className="cafe-rate">
-                평균 ★ {cafeRate.average} ({infoList.likes})
+                평균 ★ {cafeRate.average} ({cafeRate.total_count})
               </div>
               <div className="shop-btn-container">
                 <LikeBtn />
-                <Stars score={0} />
+                <Stars
+                  postStar={this.postStar}
+                  score={this.state.score}
+                  show={this.props.show}
+                />
               </div>
             </div>
           </div>
@@ -84,4 +105,4 @@ class Top extends React.Component {
   }
 }
 
-export default Top;
+export default withRouter(Top);

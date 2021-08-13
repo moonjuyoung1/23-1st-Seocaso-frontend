@@ -35,8 +35,8 @@ class Main extends React.Component {
     return (
       <div className="main">
         <section>
-          <Ranking type="star" title="별점 순 ⭐" ranking={starRanking} />
-          <Ranking type="review" title="리뷰 순 💬" ranking={reviewRanking} />
+          <Ranking type="star" title="별점 순" ranking={starRanking} />
+          <Ranking type="review" title="리뷰 순" ranking={reviewRanking} />
         </section>
       </div>
     );

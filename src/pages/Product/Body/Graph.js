@@ -42,9 +42,11 @@ class Graph extends React.Component {
             <h2 className="span-info2">별점 그래프</h2>
             <div className="header-right">
               <div className="average-rate">
-                평균 ★{info.star_rating_ranking}
+                평균 ★{this.props.graph.average}
               </div>
-              <div className="average-people">(130명)</div>
+              <div className="average-people">
+                {this.props.graph.total_count}명
+              </div>
             </div>
           </div>
           <div className="graph-container">

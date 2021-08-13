@@ -1,5 +1,4 @@
 import React from 'react';
-import { API } from '../../../config';
 
 import ImageModal from './SideInfo/Image/ImageModal';
 

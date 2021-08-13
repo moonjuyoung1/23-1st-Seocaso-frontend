@@ -10,19 +10,21 @@ class Product extends React.Component {
     super();
     this.state = {
       infoList: [],
+      show: 0,
     };
   }
 
-  //   fetch(`${API.CAFE_RATE}${cafeId}/star-rating`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         infoList: data.informations,
-  //       });
-  //     });
+  commentShow = star => {
+    const { show } = this.state;
+    if (show === 0) {
+      this.setState({
+        show: star,
+      });
+    }
+  };
 
   componentDidMount() {
-    fetch(`${API.CAFE_INFO}1`)
+    fetch(`${API.CAFE_INFO}${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -32,12 +34,10 @@ class Product extends React.Component {
   }
 
   render() {
-    console.log(this.props.match.params.id);
     return (
       <>
-        <Top infoList={this.state.infoList} />
-        <Body infoList={this.state.infoList} />
-        <div></div>
+        <Top infoList={this.state.infoList} show={this.commentShow} />
+        <Body infoList={this.state.infoList} show={this.state.show} />
       </>
     );
   }

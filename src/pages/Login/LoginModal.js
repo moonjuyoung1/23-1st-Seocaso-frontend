@@ -49,7 +49,11 @@ class LoginModal extends React.Component {
       <div className="modal-login" onClick={this.props.checkLogin}>
         <div className="login-box" onClick={e => e.stopPropagation()}>
           <header>
-            <img src="/images/seocaso_logo.png" className="header-image" />
+            <img
+              alt="header"
+              src="/images/seocaso_logo.png"
+              className="header-image"
+            />
           </header>
           <h2 className="title">로그인</h2>
 

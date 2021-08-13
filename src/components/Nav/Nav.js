@@ -62,6 +62,12 @@ class Nav extends React.Component {
     });
   };
 
+  tokenRemove = () => {
+    localStorage.removeItem('TOKEN');
+    window.location.reload();
+    console.log(111111);
+  };
+
   render() {
     const { searchInput } = this.state;
     const { handleChange, enterInsertValue } = this;
@@ -86,7 +92,10 @@ class Nav extends React.Component {
             </div>
             {localStorage.getItem('TOKEN') ? (
               <div className="login">
-                <div>다슬님</div>
+                <div className="nav-button" onClick={this.tokenRemove}>
+                  로그아웃
+                </div>
+                <div className="hojun">세상제일백엔드천재_혜림님_호준님</div>
                 <div onClick={this.goToMypage}>
                   <img alt="프로필사진" src="../../images/profilephoto.png" />
                 </div>

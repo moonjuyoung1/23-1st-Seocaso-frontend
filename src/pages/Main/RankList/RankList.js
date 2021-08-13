@@ -8,7 +8,7 @@ class RankList extends React.Component {
   };
 
   render() {
-    const { key, image, name, address } = this.props;
+    const { image, name, address } = this.props;
     return (
       <li className="carousel-list" onClick={this.goToSub}>
         {/* li 자체를 클릭해야 product로 넘어가도록 */}

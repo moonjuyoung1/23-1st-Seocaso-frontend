@@ -8,13 +8,14 @@
   right: 0;
   bottom: 0;
   background: rgba(10, 10, 10, 0.46);
-  z-index: 100;
+  z-index: 999;
   .left {
-    color: rgba(173, 170, 170, 0.815);
+    color: $color-white;
     position: relative;
     right: 20px;
     font-size: 40px;
     z-index: 900;
+    opacity: 0.7;
   }
   .carousel-wrapper {
     width: 400px;
@@ -35,18 +36,19 @@
     }
   }
   .right {
-    color: rgba(173, 170, 170, 0.815);
+    color: $color-white;
     left: 20px;
     font-size: 40px;
     position: relative;
     z-index: 900;
+    opacity: 0.7;
   }
 
   .mark {
     position: relative;
-    bottom: 300px;
-    right: 20px;
-    color: black;
+    top: -215px;
+    right: 100px;
+    color: #fafafa;
     font-size: 30px;
   }
 }

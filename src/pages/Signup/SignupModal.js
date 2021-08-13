@@ -51,7 +51,11 @@ class SignupModal extends React.Component {
         <div className="signup-modal" onClick={this.props.checkSignup}>
           <div className="signup-box" onClick={e => e.stopPropagation()}>
             <header>
-              <img src="/images/seocaso_logo.png" className="header-image" />
+              <img
+                alt="header"
+                src="/images/seocaso_logo.png"
+                className="header-image"
+              />
             </header>
             <h2 className="title">회원가입</h2>
             <section>

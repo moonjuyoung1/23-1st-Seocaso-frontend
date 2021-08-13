@@ -45,13 +45,13 @@ class ImageModal extends React.Component {
     const { prvBtn, nextBtn } = this;
     const { galleryList } = this.props;
     return (
-      <div className="modal-image">
+      <div className="modal-image" onClick={e => e.stopPropagation()}>
         <FontAwesomeIcon
           icon={faChevronCircleLeft}
           className="left"
           onClick={prvBtn}
         />
-        <div className="carousel-wrapper">
+        <div className="carousel-wrapper" onClick={this.props.modal}>
           <div
             className="image-container"
             style={{ transform: `translateX(-${pageNum * 100}%)` }}

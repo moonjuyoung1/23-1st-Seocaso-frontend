@@ -42,7 +42,7 @@ class Ranking extends React.Component {
                     <div>평균★{rank.avg_rating}</div>
                   )}
                   {this.props.type === 'review' && (
-                    <div>리뷰★{rank.avg_rating}</div>
+                    <div>평균★{rank.avg_rating}</div>
                   )}
                 </RankList>
               );
