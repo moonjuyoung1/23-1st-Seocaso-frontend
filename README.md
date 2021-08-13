@@ -3,13 +3,13 @@
 ## Seocaso Project Teammate
 
 - F.E<br>
-  [소진수](https://github.com/201steve) : 인간 망고플레이트 / 해당 프로젝트에 진심인 개발자<br>
-  [문주영](https://github.com/minmin9324) : F.E 막내 On top / F.E에서 실질적 PM의 위치<br>
-  [김다슬](https://github.com/sstaar91/) : 여얼쩡 여얼쩡 / 팀에서 말이 제일 많지만 분위기를 담당하고 있음<br>
+  [소진수](https://github.com/joshhhso)<br>
+  [문주영](https://github.com/moonjuyoung1)<br>
+  [김다슬](https://github.com/cocacollllla/)<br>
   <br>
 - B.E<br>
-  [최혜림](https://github.com/lunayyko) : 망고 플레이트 제안자 / 정신적 지주이자 우리들의 PM<br>
-  [장호준](https://github.com/Samdaso-o) : B.E 능력자 / 다른 조에서도 눈독 들이고 있는 B.E top class/ 존잘남<br> 
+  [최혜림](https://github.com/rimi0108)<br>
+  [장호준](https://github.com/bigfanoftim)<br> 
   <br>
 
 ## What is Seocaso Project?
