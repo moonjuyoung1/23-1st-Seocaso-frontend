@@ -25,7 +25,7 @@
 
 - 개발기간 : 2021/8/2 ~ 2021/8/13
 - 개발 인원 : 프론트엔드 3명, 백엔드 2명
-- [F.E github 링크](https://github.com/wecode-bootcamp-korea/23-1st-Seocaso-frontend)
+- [B.E github 링크](https://github.com/wecode-bootcamp-korea/23-1st-Seocaso-backend)
 
 ### 프로젝트 선정이유
 
