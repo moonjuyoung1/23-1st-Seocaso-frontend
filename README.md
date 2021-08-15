@@ -1,6 +1,6 @@
 # 서카소 (왓챠피디아 클론코딩)
 
-[![서카소](https://youtu.be/V38oqwMjnoI/0.jpg)](https://youtu.be/V38oqwMjnoI)
+[![서카소](https://youtube.com/V38oqwMjnoI/0.jpg)](https://youtube.com/V38oqwMjnoI)]
 
 ## Seocaso Project Teammate
 
