@@ -140,7 +140,7 @@ class Mypage extends React.Component {
             </div>
             <div className="top-info-container">
               <div className="top-info">
-                <h1 className="cafe-name">세상제일백엔드천재_혜림님_호준님</h1>
+                <h1 className="cafe-name">우주천재_최혜림</h1>
                 <div className="cafe-rate">
                   <strong>
                     오늘 당장 위코드를 시작하세요!!! 천하제일 백엔드 천재는 나!

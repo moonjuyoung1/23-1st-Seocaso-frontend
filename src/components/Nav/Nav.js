@@ -14,6 +14,7 @@ class Nav extends React.Component {
       loginOnModal: false,
       signupOnModal: false,
       profile: [],
+      nickname: '',
     };
   }
 
@@ -25,14 +26,15 @@ class Nav extends React.Component {
 
   enterInsertValue = e => {
     if (e.key === 'Enter') {
+      this.setState({
+        searchInput: e.target.value,
+      });
       this.props.history.push({
         pathname: `/Search/${this.state.searchInput}`,
         state: { keyword: this.state.searchInput },
       });
+      window.location.reload();
     }
-    this.setState({
-      searchInput: '',
-    });
   };
 
   goToMypage = () => {
@@ -63,9 +65,8 @@ class Nav extends React.Component {
   };
 
   tokenRemove = () => {
+    this.props.history.push('/main');
     localStorage.removeItem('TOKEN');
-    window.location.reload();
-    console.log(111111);
   };
 
   render() {
@@ -79,6 +80,7 @@ class Nav extends React.Component {
             src="../../images/seocaso_logo.png"
             onClick={this.goToMain}
           />
+          <span className="span">서울의 카페를 소개합니다</span>
           <div className="search">
             <div className="search-box">
               <FontAwesomeIcon icon={faSearch} className="search-icon" />
@@ -95,7 +97,7 @@ class Nav extends React.Component {
                 <div className="nav-button" onClick={this.tokenRemove}>
                   로그아웃
                 </div>
-                <div className="hojun">세상제일백엔드천재_혜림님_호준님</div>
+                <div className="hojun">우주천재_최혜림</div>
                 <div onClick={this.goToMypage}>
                   <img alt="프로필사진" src="../../images/profilephoto.png" />
                 </div>

@@ -23,11 +23,9 @@ class LoginModal extends React.Component {
     })
       .then(response => response.json())
       .then(response => {
-        console.log('결과: ', response);
         if (response.TOKEN) {
           localStorage.setItem('TOKEN', response.TOKEN);
           this.props.history.push('/main');
-          // this.props.checkLogin();
         } else {
           alert('아이디/ 비밀번호를 다시 입력해주세요!');
         }

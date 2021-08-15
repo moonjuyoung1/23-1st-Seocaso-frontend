@@ -31,7 +31,6 @@ class SignupModal extends React.Component {
     })
       .then(response => response.json())
       .then(result => console.log('결과: ', result));
-    this.props.history.push('/main');
     this.props.checkSignup();
   };
 
