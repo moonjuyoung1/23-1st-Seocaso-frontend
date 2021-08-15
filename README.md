@@ -1,5 +1,7 @@
 # 서카소 (왓챠피디아 클론코딩)
 
+
+
 ## Seocaso Project Teammate
 
 - F.E<br>
